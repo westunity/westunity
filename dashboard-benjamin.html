@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Benjamin Legg Phelps</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .dashboard-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .dashboard-header .logo {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .dashboard-header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .account-details h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #004080;
+      text-align: center;
+    }
+
+    .account-details ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .account-details li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .balance {
+      color: green;
+      font-weight: bold;
+    }
+
+    .pending-section {
+      margin-top: 30px;
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .pending-notice {
+      color: #856404;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    thead {
+      background-color: #004080;
+      color: white;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .logout-btn {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .logout-btn a {
+      background: #004080;
+      color: white;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      table {
+        font-size: 13px;
+      }
+
+      .dashboard-container {
+        margin: 20px 15px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <img src="images/logo.png" alt="West Unity Bank Logo" class="bank-logo" />
+      <h1>West Unity Bank</h1>
+      <p class="small">Online Banking Dashboard</p>
+    </div>
+
+    <div class="account-details">
+      <h2>Welcome, Benjamin Legg Phelps</h2>
+      <ul>
+        <li><strong>Date of Birth:</strong> 17/04/2004</li>
+        <li><strong>Account Number:</strong> 23825434</li>
+        <li><strong>Sort Code:</strong> 20-26-62</li>
+        <li><strong>Current Balance:</strong> <span class="balance">£5,540.00</span></li>
+      </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+  <a href="transfer-benjamin.html" style="background-color: #004080; color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: bold;">Make a Transfer</a>
+</div>
+
+
+    <div class="pending-section">
+      <p class="pending-notice">
+        ⚠️ <strong>Pending Activation Fee:</strong> £618.00<br>
+        To fully activate this account and unlock transfers, this fee must be cleared.<br>
+        For assistance, contact <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a>
+      </p>
+
+
+    <a href="terms-benjamin.html" style="font-size: 14px; color: #004080; text-decoration: underline;">View full Terms & Conditions</a>
+
+
+    <h2 style="text-align:center; margin-top: 35px;">Recent Transactions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+    
+        <tr><td>18 Jun 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£740.00</td><td>✅ Completed</td></tr>
+        <tr><td>17 Jun 2025</td><td>Transfer Attempt</td><td>Debit</td><td style="color: red;">−£2,540.00</td><td>❌ Blocked (Account Not Activated)</td></tr>
+        <tr><td>16 Jun 2025</td><td>Transfer Attempt</td><td>Debit</td><td style="color: red;">−£1,000.00</td><td>❌ Blocked (Account Not Activated)</td></tr>
+        <tr><td>15 Jun 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,500.00</td><td>✅ Completed</td></tr>
+        <tr><td>14 Jun 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£3,000.00</td><td>✅ Completed</td></tr>
+        <tr><td>03 Jun 2025</td><td>Disability Support</td><td>Credit</td><td style="color: green;">+£6,000.00</td><td>✅ Completed</td></tr>
+        <tr><td>01 Jun 2025</td><td>Utility Bill Payment</td><td>Debit</td><td style="color: red;">−£220.75</td><td>✅ Completed</td></tr>
+        <tr><td>29 May 2025</td><td>Amazon Purchase</td><td>Debit</td><td style="color: red;">−£89.99</td><td>✅ Completed</td></tr>
+        <tr><td>27 May 2025</td><td>NHS Support Grant</td><td>Credit</td><td style="color: green;">+£5,500.00</td><td>✅ Completed</td></tr>
+        <tr><td>24 May 2025</td><td>Transfer In</td><td>Credit</td><td style="color: green;">+£4,200.00</td><td>✅ Completed</td></tr>
+        <tr><td>22 May 2025</td><td>HMRC Refund</td><td>Credit</td><td style="color: green;">+£2,150.00</td><td>✅ Completed</td></tr>
+        <tr><td>20 May 2025</td><td>Food Delivery App</td><td>Debit</td><td style="color: red;">−£36.45</td><td>✅ Completed</td></tr>
+      </tbody>
+    </table>
+
+    <div class="logout-btn">
+      <a href="index.html">Logout</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 West Unity Bank. All rights reserved.
+  </footer>
+</body>
+</html>
