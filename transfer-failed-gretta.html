@@ -3,52 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Transfer Failed - West Unity Bank</title>
+  <title>Transaction Declined - West Unity Bank</title>
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Premium Error Page Styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .dashboard-container {
+        width: 90%;
+        max-width: 500px;
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid #c62828; /* Red border for error */
+    }
+
+    .bank-logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .icon-box {
+        font-size: 60px;
+        color: #c62828;
+        margin-bottom: 20px;
+        animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        75% { transform: translateX(-5px); }
+        100% { transform: translateX(0); }
+    }
+
+    h1 {
+        color: #c62828;
+        font-size: 24px;
+        margin: 0 0 10px 0;
+    }
+
+    .error-code {
+        color: #999;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .message-box {
+        background-color: #ffebee;
+        border: 1px solid #ffcdd2;
+        color: #b71c1c;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .amount-highlight {
+        font-weight: bold;
+        background: white;
+        padding: 2px 5px;
+        border-radius: 4px;
+        border: 1px solid #ffcdd2;
+    }
+
+    .btn-home {
+        display: inline-block;
+        background-color: #004080;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .btn-home:hover {
+        background-color: #003366;
+    }
+
+    .support-link {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    .support-link a {
+        color: #004080;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #999;
+    }
+  </style>
 </head>
 <body>
+
   <div class="dashboard-container">
-    <div class="dashboard-header">
-      <img src="images/logo.png" alt="West Unity Bank" class="logo">
-      <h1>❌ Transfer Failed</h1>
-      <p class="small">Transaction could not be processed</p>
+    <img src="images/logo.png" alt="West Unity Bank" class="bank-logo">
+    
+    <div class="icon-box">
+        <i class="fas fa-times-circle"></i>
     </div>
 
-    <div style="text-align: center; padding: 20px;">
-      <p style="font-size: 16px; color: #b30000;">
-        This account is currently restricted due to an unpaid activation fee of <strong>$300.00</strong>.<br><br>
-        To complete transfers and unlock full access, please settle your activation fee.<br><br>
-        Contact <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a> for support.
-      </p>
-      <a href="dashboard-gretta.html" style="display: inline-block; margin-top: 20px; background-color: #004080; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">← Back to Dashboard</a>
+    <h1>Transaction Declined</h1>
+    <p class="error-code">Error Code: 503-ACT-LIMIT</p>
+
+    <div class="message-box">
+        <strong><i class="fas fa-lock"></i> Account Restriction Active</strong><br><br>
+        We could not process your transfer request. Your account has a pending security hold due to an incomplete activation balance.<br><br>
+        
+        <ul style="margin: 10px 0; padding-left: 20px;">
+            <li>Status: <strong>Partial Payment Received</strong></li>
+            <li>Remaining Balance: <span class="amount-highlight">$100.00</span></li>
+        </ul>
+
+        Please clear the remaining fee to unlock the <strong>$25,000.00</strong> daily transfer limit immediately.
+    </div>
+
+    <a href="dashboard-gretta.html" class="btn-home">
+        <i class="fas fa-arrow-left"></i> Return to Dashboard
+    </a>
+
+    <div class="support-link">
+        Need help? Contact <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a>
     </div>
   </div>
 
-  <footer style="text-align: center; margin-top: 30px; font-size: 13px; color: #999;">
-    &copy; 2025 West Unity Bank. All rights reserved.
+  <footer>
+    &copy; 2025 West Unity Bank. Member FDIC.
   </footer>
 
-  <!-- ❄️ Realistic Snow Generator -->
-<script>
-  const snowCount = 60;  // Increase for thicker snow
-  for (let i = 0; i < snowCount; i++) {
-    let flake = document.createElement("div");
-    flake.className = "snowflake";
+  <!-- ❄️ Snow Effect -->
+  <script>
+    const snowCount = 40;
+    for (let i = 0; i < snowCount; i++) {
+      let flake = document.createElement("div");
+      flake.className = "snowflake";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+      flake.style.opacity = 0.5 + Math.random() * 0.5;
+      flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(flake);
+    }
+  </script>
 
-    flake.style.left = Math.random() * 100 + "vw";
-    flake.style.animationDuration = 4 + Math.random() * 6 + "s";
-    flake.style.opacity = 0.5 + Math.random() * 0.5;
-    flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+  <!-- Snow CSS -->
+  <style>
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: #ccc; /* Slightly darker snow for visibility on white if needed */
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
 
-    flake.style.animationDelay = Math.random() * 5 + "s";
-
-    document.body.appendChild(flake);
-  }
-</script>
-  
 </body>
 </html>
-
-
-
-
