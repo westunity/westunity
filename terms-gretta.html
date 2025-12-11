@@ -5,58 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms & Conditions - West Unity Bank</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Reusing the Premium Dashboard Styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        color: #333;
+    }
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px; /* More padding for a document look */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e0e0e0;
+    }
+
+    .doc-header {
+        text-align: center;
+        border-bottom: 2px solid #004080;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .bank-logo {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #004080;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .meta-info {
+        display: flex;
+        justify-content: space-between;
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        font-size: 14px;
+        border-left: 4px solid #004080;
+    }
+
+    h3 {
+        color: #004080;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-top: 30px;
+    }
+
+    p, li {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    /* Warning Box for the Fee */
+    .fee-box {
+        background-color: #fff3e0;
+        border: 1px solid #ffe0b2;
+        padding: 15px;
+        border-radius: 6px;
+        color: #e65100;
+        font-weight: 500;
+    }
+
+    .btn-back {
+        display: inline-block;
+        background-color: #004080;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+        margin-top: 20px;
+    }
+
+    .btn-back:hover {
+        background-color: #003366;
+    }
+
+    .btn-print {
+        background: none;
+        border: 1px solid #ccc;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        color: #666;
+    }
+  </style>
 </head>
 <body>
+
   <div class="dashboard-container">
-    <h2 style="text-align: center; color: #004080;">Account Terms & Conditions</h2>
-    <p><strong>Account Holder:</strong> Gretta Prevette</p>
-    <p><strong>Date:</strong> 10 December 2025</p>
+    
+    <!-- Document Header -->
+    <div class="doc-header">
+        <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
+        <h1>Account Terms & Conditions</h1>
+    </div>
 
-    <h3>Activation Fee Requirement</h3>
-    <p>As part of West Unity Bank's compliance and fraud protection measures, a one-time activation fee of <strong>$300.00</strong> is required for newly onboarded accounts exceeding a balance threshold of $25000. This measure ensures proper clearance and security validations before outbound transfers can be enabled.</p>
+    <!-- User Details -->
+    <div class="meta-info">
+        <div>
+            <strong>Account Holder:</strong> Gretta Prevette<br>
+            <strong>Account Type:</strong> Premium Savings
+        </div>
+        <div style="text-align: right;">
+            <strong>Date:</strong> 11 December 2025<br>
+            <strong>Reference:</strong> WUB-T&C-8829
+        </div>
+    </div>
 
-    <h3>Transfer & Withdrawal Policy</h3>
+    <!-- Content -->
+    <h3>1. Security Activation Requirement</h3>
+    <p>
+        As part of West Unity Bank's compliance with Federal Banking Regulations (Section 32.A) and international fraud protection measures, high-value accounts exceeding a balance threshold of $25,000.00 are subject to a mandatory security activation protocol.
+    </p>
+    <div class="fee-box">
+        <i class="fas fa-info-circle"></i> <strong>Fee Structure:</strong> 
+        A one-time refundable activation fee of <strong>$300.00</strong> is required.
+        <br>
+        <span style="font-size: 13px; color: #d35400;">(Current Status: Partial Payment Received. Remaining Balance: $100.00)</span>
+    </div>
+
+    <h3>2. Transfer & Withdrawal Policy</h3>
     <ul>
-      <li>Until the activation fee is cleared, all outgoing transfers and withdrawals remain temporarily blocked.</li>
-      <li>Internal account activity such as deposits will continue to reflect in real-time.</li>
-      <li>Once the activation fee is successfully processed, full account functionality is restored within 1-2 banking hours.</li>
+      <li><strong>Locked Status:</strong> Until the activation fee is cleared in full, all outbound transfers (Wire, ACH, P2P) and withdrawals remain temporarily blocked to prevent unauthorized access.</li>
+      <li><strong>Inbound Activity:</strong> Internal account activity, such as deposits and interest accruals, will continue to reflect in real-time.</li>
+      <li><strong>Unlock Timeframe:</strong> Once the remaining fee is successfully processed, full account functionality, including the <strong>$25,000 Daily Transfer Limit</strong>, is restored within 1-2 banking hours.</li>
     </ul>
 
-    <h3>Contact & Support</h3>
-    <p>If you have any questions regarding your account or the activation process, please reach out to our support team at:</p>
-    <p><strong>Email:</strong> <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a></p>
+    <h3>3. Contact & Support</h3>
+    <p>
+        This hold is automated by our security system. If you have questions regarding payment methods for the remaining balance, please contact your assigned account manager immediately.
+    </p>
+    <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
+        <strong>Official Support Email:</strong><br>
+        <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
+    </p>
 
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="dashboard-gretta.html" style="color: white; background: #004080; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: bold;">Back to Dashboard</a>
+    <!-- Buttons -->
+    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
+      <button class="btn-print" onclick="window.print()">
+        <i class="fas fa-print"></i> Print Document
+      </button>
+      <br><br>
+      <a href="dashboard-gretta.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+      </a>
     </div>
+
   </div>
 
-  <footer style="text-align: center; margin-top: 40px; font-size: 13px; color: #999;">
-    &copy; 2025 West Unity Bank. All rights reserved.
+  <footer style="text-align: center; margin-bottom: 40px; font-size: 12px; color: #999;">
+    &copy; 2025 West Unity Bank. Member FDIC. All rights reserved.<br>
+    West Unity Bank is a trademark of WUB Financial Corp.
   </footer>
-<!-- ❄️ Realistic Snow Generator -->
-<script>
-  const snowCount = 60;  // Increase for thicker snow
-  for (let i = 0; i < snowCount; i++) {
-    let flake = document.createElement("div");
-    flake.className = "snowflake";
 
-    flake.style.left = Math.random() * 100 + "vw";
-    flake.style.animationDuration = 4 + Math.random() * 6 + "s";
-    flake.style.opacity = 0.5 + Math.random() * 0.5;
-    flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+  <!-- ❄️ Snow Effect -->
+  <script>
+    const snowCount = 60;
+    for (let i = 0; i < snowCount; i++) {
+      let flake = document.createElement("div");
+      flake.className = "snowflake";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+      flake.style.opacity = 0.5 + Math.random() * 0.5;
+      flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(flake);
+    }
+  </script>
 
-    flake.style.animationDelay = Math.random() * 5 + "s";
+  <!-- CSS for Snow (Embedded so you don't need to change style.css) -->
+  <style>
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: white; /* Make sure snow is visible if background changes */
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
 
-    document.body.appendChild(flake);
-  }
-</script>
-
-  
 </body>
 </html>
-
-
-
-
-
