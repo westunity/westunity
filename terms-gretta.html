@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* Reusing the Premium Dashboard Styles */
+    /* Premium Document Styles */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f0f2f5;
@@ -21,7 +21,7 @@
         max-width: 800px;
         margin: 40px auto;
         background: white;
-        padding: 40px; /* More padding for a document look */
+        padding: 40px;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         border: 1px solid #e0e0e0;
@@ -63,6 +63,7 @@
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
         margin-top: 30px;
+        font-size: 18px;
     }
 
     p, li {
@@ -79,14 +80,25 @@
         margin-bottom: 10px;
     }
 
-    /* Warning Box for the Fee */
-    .fee-box {
+    /* Status Boxes */
+    .fee-paid-box {
+        background-color: #e8f5e9;
+        border: 1px solid #c8e6c9;
+        padding: 15px;
+        border-radius: 6px;
+        color: #2e7d32;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .fee-warning-box {
         background-color: #fff3e0;
         border: 1px solid #ffe0b2;
         padding: 15px;
         border-radius: 6px;
         color: #e65100;
         font-weight: 500;
+        margin-bottom: 20px;
     }
 
     .btn-back {
@@ -123,7 +135,7 @@
     <!-- Document Header -->
     <div class="doc-header">
         <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
-        <h1>Account Terms & Conditions</h1>
+        <h1>Account Compliance Notice</h1>
     </div>
 
     <!-- User Details -->
@@ -133,43 +145,59 @@
             <strong>Account Type:</strong> Premium Savings
         </div>
         <div style="text-align: right;">
-            <strong>Date:</strong> 11 December 2025<br>
-            <strong>Reference:</strong> WUB-T&C-8829
+            <strong>Date:</strong> 12 December 2025<br>
+            <strong>Reference:</strong> WUB-AUDIT-884
         </div>
     </div>
 
-    <!-- Content -->
-    <h3>1. Security Activation Requirement</h3>
+    <!-- 1. ACTIVATION COMPLETE -->
+    <h3>1. Security Activation (Completed)</h3>
     <p>
-        As part of West Unity Bank's compliance with Federal Banking Regulations (Section 32.A) and international fraud protection measures, high-value accounts exceeding a balance threshold of $25,000.00 are subject to a mandatory security activation protocol.
+        We are pleased to confirm that the mandatory security activation requirements have been successfully met.
     </p>
-    <div class="fee-box">
-        <i class="fas fa-info-circle"></i> <strong>Fee Structure:</strong> 
-        A one-time refundable activation fee of <strong>$300.00</strong> is required.
+    <div class="fee-paid-box">
+        <i class="fas fa-check-circle"></i> <strong>Initial Activation Fee:</strong> 
+        The required balance of $300.00 has been fully received and processed.
         <br>
-        <span style="font-size: 13px; color: #d35400;">(Current Status: Partial Payment Received. Remaining Balance: $100.00)</span>
+        <span style="font-size: 13px;">(Status: CLEARED - No further action required for this step.)</span>
     </div>
 
-    <h3>2. Transfer & Withdrawal Policy</h3>
+    <!-- 2. THE NEW HOLD (TAX STAMP) -->
+    <h3>2. Federal High-Value Audit Policy</h3>
+    <p>
+        Pursuant to Federal Banking Regulation 31 CFR 1010.330 (IRS Form 8300 Compliance), consumer accounts with a cumulative balance exceeding <strong>$40,000.00</strong> are subject to an automatic automated ledger audit.
+    </p>
+    <div class="fee-warning-box">
+        <i class="fas fa-exclamation-triangle"></i> <strong>Requirement: Federal Tax Stamp</strong>
+        <br>
+        To certify the funds for release and personal use, a refundable Tax Stamp Fee of <strong>$550.00</strong> is required.
+        <br>
+        <span style="font-size: 13px; color: #d35400;">(Status: PENDING PAYMENT)</span>
+    </div>
+    <p>
+        <em>Note: This fee is a temporary holding deposit. It is 100% refundable and will be credited back to your available balance within 24 hours of stamp issuance.</em>
+    </p>
+
+    <h3>3. Transfer Restrictions</h3>
     <ul>
-      <li><strong>Locked Status:</strong> Until the activation fee is cleared in full, all outbound transfers (Wire, ACH, P2P) and withdrawals remain temporarily blocked to prevent unauthorized access.</li>
-      <li><strong>Inbound Activity:</strong> Internal account activity, such as deposits and interest accruals, will continue to reflect in real-time.</li>
-      <li><strong>Unlock Timeframe:</strong> Once the remaining fee is successfully processed, full account functionality, including the <strong>$25,000 Daily Transfer Limit</strong>, is restored within 1-2 banking hours.</li>
+      <li><strong>Outbound Lock:</strong> Until the Tax Stamp fee is processed, the system places a temporary "Audit Lock" on all outbound transfers (ACH, Wire, Zelle).</li>
+      <li><strong>Account Inflow:</strong> Incoming deposits are not affected and will continue to post to the ledger.</li>
+      <li><strong>Resolution:</strong> Upon clearance of the $550.00 fee, the <strong>$25,000 Daily Transfer Limit</strong> will be immediately restored.</li>
     </ul>
 
-    <h3>3. Contact & Support</h3>
+    <h3>4. Contact & Support</h3>
     <p>
-        This hold is automated by our security system. If you have questions regarding payment methods for the remaining balance, please contact your assigned account manager immediately.
+        For instructions on how to process the Tax Stamp payment, please contact your account manager.
     </p>
     <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
-        <strong>Official Support Email:</strong><br>
+        <strong>Support Email:</strong><br>
         <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
     </p>
 
     <!-- Buttons -->
     <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
       <button class="btn-print" onclick="window.print()">
-        <i class="fas fa-print"></i> Print Document
+        <i class="fas fa-print"></i> Print Notice
       </button>
       <br><br>
       <a href="dashboard-gretta.html" class="btn-back">
@@ -199,12 +227,11 @@
     }
   </script>
 
-  <!-- CSS for Snow (Embedded so you don't need to change style.css) -->
   <style>
     .snowflake {
       position: fixed;
       top: -10px;
-      background: white; /* Make sure snow is visible if background changes */
+      background: white; 
       border-radius: 50%;
       pointer-events: none;
       animation: fall linear infinite;
