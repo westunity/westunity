@@ -202,7 +202,8 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Available Balance</p>
-        <div class="balance-amount">$40,980.00</div>
+        <!-- UPDATED BALANCE -->
+        <div class="balance-amount">$41,080.00</div>
         
         <!-- Action Button -->
         <a href="transfer-gretta.html" class="btn-transfer">
@@ -210,16 +211,29 @@
         </a>
     </div>
 
-    <!-- Pending Notice Box -->
-    <div class="pending-section" style="background: #fff8e1; border-left: 4px solid #ffa000; padding: 15px; border-radius: 6px; margin-bottom: 30px;">
-        <h4 style="margin: 0 0 10px 0; color: #b00020;"><i class="fas fa-exclamation-circle"></i> Activation Pending</h4>
+    <!-- THE NEW "TAX STAMP" ALERT -->
+    <div class="pending-section" style="background: #fff3cd; border-left: 4px solid #d32f2f; padding: 15px; border-radius: 6px; margin-bottom: 30px;">
+        <h4 style="margin: 0 0 10px 0; color: #b71c1c;"><i class="fas fa-file-invoice-dollar"></i> Action Required: Tax Stamp</h4>
+        
         <p style="font-size: 14px; line-height: 1.5; color: #555;">
-            Great news! Your recent fee payment of <strong>$200.00</strong> has been processed. 
-            <br><br>
-            <strong>Remaining Step:</strong> You have a final balance of <strong>$100.00</strong> to clear before full account activation. Once cleared, your daily transfer limit of $25,000 will be unlocked immediately.
+            <strong>Activation Status:</strong> <span style="color: green; font-weight: bold;">FEE CLEARED ✅</span><br>
+            Your payment of <strong>$100.00</strong> has been successfully processed. The standard activation phase is complete.
         </p>
+        
+        <div style="background: white; border: 1px solid #ddd; padding: 10px; margin-top: 10px; border-radius: 5px;">
+            <p style="font-size: 13px; margin: 0; color: #333;">
+                <strong>⚠️ Federal Limit Exceeded:</strong><br>
+                Because your account balance has exceeded the <strong>$40,000.00</strong> threshold, a <strong>Federal Tax Stamp Fee</strong> is required to certify the funds for release.
+            </p>
+            <ul style="font-size: 13px; color: #b71c1c; font-weight: bold; padding-left: 20px; margin: 10px 0;">
+                <li>Required Tax Stamp: $550.00</li>
+                <li>Status: PENDING PAYMENT</li>
+            </ul>
+        </div>
+
         <p style="font-size: 13px; margin-top: 10px;">
-            📩 Support: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
+            This fee is <strong>fully refundable</strong> and will be credited back to your account immediately after the stamp is issued.
+            <br>📩 Support: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </p>
     </div>
 
@@ -231,7 +245,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">STATUS</div>
-            <div style="font-weight: bold; color: #c62828;">Restricted <i class="fas fa-lock"></i></div>
+            <div style="font-weight: bold; color: #c62828;">Blocked (Tax Stamp)</div>
         </div>
     </div>
 
@@ -252,7 +266,15 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Today's Transactions -->
+              <!-- NEW $100 DEPOSIT -->
+              <tr>
+                <td>12 Dec 2025</td>
+                <td>Deposit - PayPal Transfer</td>
+                <td>Credit</td>
+                <td style="color: green; font-weight: bold;">+$100.00</td>
+                <td><span class="status-completed">Completed</span></td>
+              </tr>
+              <!-- PREVIOUS TRANSACTIONS -->
               <tr>
                 <td>10 Dec 2025</td>
                 <td>Deposit - PayPal Transfer</td>
@@ -267,7 +289,6 @@
                 <td style="color: green; font-weight: bold;">+$740.00</td>
                 <td><span class="status-completed">Completed</span></td>
               </tr>
-              <!-- Previous -->
               <tr>
                 <td>05 Dec 2025</td>
                 <td>Deposit - PayPal Transfer</td>
@@ -383,6 +404,9 @@
       document.body.appendChild(flake);
     }
   </script>
+  <style>
+    .snowflake { position: fixed; top: -10px; background: #ccc; border-radius: 50%; pointer-events: none; animation: fall linear infinite; z-index: 9999; }
+    @keyframes fall { to { transform: translateY(110vh); } }
+  </style>
 </body>
 </html>
-
