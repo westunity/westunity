@@ -135,69 +135,70 @@
     <!-- Document Header -->
     <div class="doc-header">
         <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
-        <h1>Account Compliance Notice</h1>
+        <h1>Compliance Audit Report</h1>
     </div>
 
     <!-- User Details -->
     <div class="meta-info">
         <div>
             <strong>Account Holder:</strong> Gretta Prevette<br>
-            <strong>Account Type:</strong> Premium Savings
+            <strong>Account Status:</strong> <span style="color:#d84315; font-weight:bold;">AML FLAG ACTIVE</span>
         </div>
         <div style="text-align: right;">
-            <strong>Date:</strong> 12 December 2025<br>
-            <strong>Reference:</strong> WUB-AUDIT-884
+            <strong>Date:</strong> 13 December 2025<br>
+            <strong>Reference:</strong> WUB-AML-992
         </div>
     </div>
 
-    <!-- 1. ACTIVATION COMPLETE -->
-    <h3>1. Security Activation (Completed)</h3>
-    <p>
-        We are pleased to confirm that the mandatory security activation requirements have been successfully met.
-    </p>
+    <!-- 1. CLEARED STEPS -->
+    <h3>1. Validated Clearance History</h3>
+    <p>The following mandatory requirements have been successfully processed and logged in the federal ledger:</p>
     <div class="fee-paid-box">
-        <i class="fas fa-check-circle"></i> <strong>Initial Activation Fee:</strong> 
-        The required balance of $300.00 has been fully received and processed.
-        <br>
-        <span style="font-size: 13px;">(Status: CLEARED - No further action required for this step.)</span>
+        <ul style="margin: 0; padding-left: 20px;">
+            <li><i class="fas fa-check-circle"></i> <strong>Initial Activation Fee:</strong> PAID ($300.00)</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Federal Tax Stamp:</strong> PAID ($550.00)</li>
+        </ul>
+        <div style="margin-top: 10px; font-size: 13px; border-top: 1px solid #c8e6c9; padding-top: 5px;">
+            Status: Historical Requirements Met. No further action needed for these items.
+        </div>
     </div>
 
-    <!-- 2. THE NEW HOLD (TAX STAMP) -->
-    <h3>2. Federal High-Value Audit Policy</h3>
+    <!-- 2. THE NEW HOLD (AML BOND) -->
+    <h3>2. Anti-Money Laundering (AML) Compliance</h3>
     <p>
-        Pursuant to Federal Banking Regulation 31 CFR 1010.330 (IRS Form 8300 Compliance), consumer accounts with a cumulative balance exceeding <strong>$40,000.00</strong> are subject to an automatic automated ledger audit.
+        Due to the high velocity of recent deposits and cumulative balance growth, your account has triggered an automated <strong>Structuring Alert</strong> under FinCEN Regulation 104.
     </p>
     <div class="fee-warning-box">
-        <i class="fas fa-exclamation-triangle"></i> <strong>Requirement: Federal Tax Stamp</strong>
+        <i class="fas fa-shield-alt"></i> <strong>Requirement: Liquidity Whitelist Bond</strong>
         <br>
-        To certify the funds for release and personal use, a refundable Tax Stamp Fee of <strong>$550.00</strong> is required.
+        To verify the source of funds and whitelist the account for outbound transfers, a <strong>Refundable Liquidity Bond of $980.00</strong> is required.
         <br>
-        <span style="font-size: 13px; color: #d35400;">(Status: PENDING PAYMENT)</span>
+        <span style="font-size: 13px; color: #d35400;">(Status: PENDING VALIDATION)</span>
     </div>
     <p>
-        <em>Note: This fee is a temporary holding deposit. It is 100% refundable and will be credited back to your available balance within 24 hours of stamp issuance.</em>
+        <em>Policy: This bond serves as a temporary security deposit. It is 100% refundable and will be added to your available withdrawal balance immediately upon account whitelisting.</em>
     </p>
 
-    <h3>3. Transfer Restrictions</h3>
+    <h3>3. Operational Restrictions</h3>
     <ul>
-      <li><strong>Outbound Lock:</strong> Until the Tax Stamp fee is processed, the system places a temporary "Audit Lock" on all outbound transfers (ACH, Wire, Zelle).</li>
-      <li><strong>Account Inflow:</strong> Incoming deposits are not affected and will continue to post to the ledger.</li>
-      <li><strong>Resolution:</strong> Upon clearance of the $550.00 fee, the <strong>$25,000 Daily Transfer Limit</strong> will be immediately restored.</li>
+      <li><strong>Security Freeze:</strong> All outbound transfers remain paused until the Whitelist Bond is verified.</li>
+      <li><strong>Account Inflow:</strong> Incoming deposits may continue, but cannot be withdrawn until the AML flag is cleared.</li>
+      <li><strong>Resolution:</strong> Once the $980.00 bond is posted, the account will be permanently whitelisted, removing all future deposit limits.</li>
     </ul>
 
     <h3>4. Contact & Support</h3>
     <p>
-        For instructions on how to process the Tax Stamp payment, please contact your account manager.
+        For instructions on posting the Liquidity Bond, please contact the Compliance Department.
     </p>
     <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
-        <strong>Support Email:</strong><br>
+        <strong>Compliance Desk:</strong><br>
         <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
     </p>
 
     <!-- Buttons -->
     <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
       <button class="btn-print" onclick="window.print()">
-        <i class="fas fa-print"></i> Print Notice
+        <i class="fas fa-print"></i> Print Report
       </button>
       <br><br>
       <a href="dashboard-gretta.html" class="btn-back">
