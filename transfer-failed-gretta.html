@@ -34,7 +34,7 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-        border-top: 5px solid #c62828; /* Red border for error */
+        border-top: 5px solid #d84315; /* Deep Orange/Red for Security Alert */
     }
 
     .bank-logo {
@@ -44,7 +44,7 @@
 
     .icon-box {
         font-size: 60px;
-        color: #c62828;
+        color: #d84315;
         margin-bottom: 20px;
         animation: shake 0.5s;
     }
@@ -58,7 +58,7 @@
     }
 
     h1 {
-        color: #c62828;
+        color: #b71c1c;
         font-size: 24px;
         margin: 0 0 10px 0;
     }
@@ -72,8 +72,8 @@
     }
 
     .message-box {
-        background-color: #ffebee;
-        border: 1px solid #ffcdd2;
+        background-color: #fff8e1;
+        border: 1px solid #ffe0b2;
         color: #b71c1c;
         padding: 15px;
         border-radius: 8px;
@@ -88,8 +88,8 @@
         background: white;
         padding: 2px 5px;
         border-radius: 4px;
-        border: 1px solid #ffcdd2;
-        color: #c62828;
+        border: 1px solid #d84315;
+        color: #d84315;
     }
 
     .status-ok {
@@ -141,22 +141,23 @@
     <img src="images/logo.png" alt="West Unity Bank" class="bank-logo">
     
     <div class="icon-box">
-        <i class="fas fa-hand-holding-usd"></i>
+        <i class="fas fa-shield-alt"></i>
     </div>
 
-    <h1>Transaction Blocked</h1>
-    <p class="error-code">Error Code: ERR-TAX-8300-LIMIT</p>
+    <h1>Security Freeze Active</h1>
+    <p class="error-code">Error Code: SEC-AML-FLAG-99</p>
 
     <div class="message-box">
-        <strong><i class="fas fa-lock"></i> Federal Audit Hold Active</strong><br><br>
-        We cannot process this transfer. Although your account activation is complete, your total balance has triggered a high-value audit ($40,000+ limit).<br><br>
+        <strong><i class="fas fa-lock"></i> Transfer Suspended (FinCEN)</strong><br><br>
+        Your transfer has been automatically blocked due to high-velocity deposit activity ("Structuring Detection").<br><br>
         
         <ul style="margin: 10px 0; padding-left: 20px; list-style: none;">
-            <li style="margin-bottom: 8px;">✅ Activation Fee: <span class="status-ok">PAID</span></li>
-            <li>⚠️ <strong>Refundable Tax Stamp:</strong> <span class="amount-highlight">$550.00 PENDING</span></li>
+            <li style="margin-bottom: 5px;">✅ Activation Fee: <span class="status-ok">CLEARED</span></li>
+            <li style="margin-bottom: 5px;">✅ Federal Tax Stamp: <span class="status-ok">CLEARED</span></li>
+            <li>⚠️ <strong>Whitelist Bond:</strong> <span class="amount-highlight">$980.00 REQUIRED</span></li>
         </ul>
 
-        Federal banking regulations require this Stamp Fee to be cleared before any funds can leave the account. The fee is fully refundable within 24 hours.
+        To release this security freeze and whitelist your account for large transfers, the refundable Liquidity Bond must be posted immediately.
     </div>
 
     <a href="dashboard-gretta.html" class="btn-home">
