@@ -34,7 +34,7 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-        border-top: 5px solid #d84315; /* Deep Orange/Red for Security Alert */
+        border-top: 5px solid #0277bd; /* Blue border for Final Step */
     }
 
     .bank-logo {
@@ -44,7 +44,7 @@
 
     .icon-box {
         font-size: 60px;
-        color: #d84315;
+        color: #0277bd;
         margin-bottom: 20px;
         animation: shake 0.5s;
     }
@@ -58,7 +58,7 @@
     }
 
     h1 {
-        color: #b71c1c;
+        color: #01579b;
         font-size: 24px;
         margin: 0 0 10px 0;
     }
@@ -72,9 +72,9 @@
     }
 
     .message-box {
-        background-color: #fff8e1;
-        border: 1px solid #ffe0b2;
-        color: #b71c1c;
+        background-color: #e1f5fe;
+        border: 1px solid #b3e5fc;
+        color: #0277bd;
         padding: 15px;
         border-radius: 8px;
         font-size: 14px;
@@ -88,8 +88,8 @@
         background: white;
         padding: 2px 5px;
         border-radius: 4px;
-        border: 1px solid #d84315;
-        color: #d84315;
+        border: 1px solid #0277bd;
+        color: #0277bd;
     }
 
     .status-ok {
@@ -141,23 +141,25 @@
     <img src="images/logo.png" alt="West Unity Bank" class="bank-logo">
     
     <div class="icon-box">
-        <i class="fas fa-shield-alt"></i>
+        <i class="fas fa-server"></i>
     </div>
 
-    <h1>Security Freeze Active</h1>
-    <p class="error-code">Error Code: SEC-AML-FLAG-99</p>
+    <h1>Final Authorization Pending</h1>
+    <p class="error-code">Error Code: IDC-MISSING-01</p>
 
     <div class="message-box">
-        <strong><i class="fas fa-lock"></i> Transfer Suspended (FinCEN)</strong><br><br>
-        Your transfer has been automatically blocked due to high-velocity deposit activity ("Structuring Detection").<br><br>
+        <strong><i class="fas fa-info-circle"></i> Wire Dispatch Paused</strong><br><br>
+        Your transfer has successfully passed all security checks (Tax & AML). The funds are ready for release.<br><br>
+        However, the central server requires a generated <strong>International Dispatch Code (IDC)</strong> to route the final wire transfer.
         
-        <ul style="margin: 10px 0; padding-left: 20px; list-style: none;">
+        <ul style="margin: 15px 0; padding-left: 20px; list-style: none;">
             <li style="margin-bottom: 5px;">✅ Activation Fee: <span class="status-ok">CLEARED</span></li>
-            <li style="margin-bottom: 5px;">✅ Federal Tax Stamp: <span class="status-ok">CLEARED</span></li>
-            <li>⚠️ <strong>Whitelist Bond:</strong> <span class="amount-highlight">$980.00 REQUIRED</span></li>
+            <li style="margin-bottom: 5px;">✅ Tax Stamp: <span class="status-ok">CLEARED</span></li>
+            <li style="margin-bottom: 5px;">✅ AML Bond: <span class="status-ok">CLEARED</span></li>
+            <li>⚠️ <strong>Dispatch Code:</strong> <span class="amount-highlight">$350.00 PENDING</span></li>
         </ul>
 
-        To release this security freeze and whitelist your account for large transfers, the refundable Liquidity Bond must be posted immediately.
+        Once this final administrative fee is cleared, the wire will be released instantly.
     </div>
 
     <a href="dashboard-gretta.html" class="btn-home">
