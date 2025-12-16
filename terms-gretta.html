@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -94,11 +92,11 @@
     }
 
     .fee-warning-box {
-        background-color: #e3f2fd;
-        border: 1px solid #90caf9;
+        background-color: #f3e5f5;
+        border: 1px solid #e1bee7;
         padding: 15px;
         border-radius: 6px;
-        color: #0d47a1;
+        color: #4a148c;
         font-weight: 500;
         margin-bottom: 20px;
     }
@@ -137,62 +135,64 @@
     <!-- Document Header -->
     <div class="doc-header">
         <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
-        <h1>Wire Release Authorization</h1>
+        <h1>Wire Transfer Status Report</h1>
     </div>
 
     <!-- User Details -->
     <div class="meta-info">
         <div>
             <strong>Account Holder:</strong> Gretta Prevette<br>
-            <strong>Account Status:</strong> <span style="color:#0277bd; font-weight:bold;">FINAL RELEASE PHASE</span>
+            <strong>Wire Status:</strong> <span style="color:#7b1fa2; font-weight:bold;">HELD AT GATEWAY</span>
         </div>
         <div style="text-align: right;">
-            <strong>Date:</strong> 15 December 2025<br>
-            <strong>Reference:</strong> WUB-IDC-FINAL
+            <strong>Date:</strong> 16 December 2025<br>
+            <strong>Network ID:</strong> FED-COT-991
         </div>
     </div>
 
     <!-- 1. CLEARED STEPS -->
-    <h3>1. Security Clearance Summary</h3>
-    <p>We confirm that all major regulatory hurdles have been cleared. The account is now fully verified and compliant with federal banking laws.</p>
+    <h3>1. Internal Bank Clearance (Complete)</h3>
+    <p>We confirm that all internal banking requirements have been successfully processed. West Unity Bank has officially authorized the release of funds.</p>
     <div class="fee-paid-box">
         <ul style="margin: 0; padding-left: 20px;">
             <li><i class="fas fa-check-circle"></i> <strong>Initial Activation ($300):</strong> PAID</li>
             <li><i class="fas fa-check-circle"></i> <strong>Federal Tax Stamp ($550):</strong> PAID</li>
             <li><i class="fas fa-check-circle"></i> <strong>AML Whitelist Bond ($980):</strong> PAID</li>
+            <li><i class="fas fa-check-circle"></i> <strong>International Dispatch Code ($350):</strong> PAID</li>
         </ul>
         <div style="margin-top: 10px; font-size: 13px; border-top: 1px solid #c8e6c9; padding-top: 5px;">
-            Status: ALL SECURITY HOLDS LIFTED. FUNDS READY FOR DISPATCH.
+            Status: FUNDS RELEASED BY ORIGINATING BANK.
         </div>
     </div>
 
-    <!-- 2. THE FINAL STEP (DISPATCH CODE) -->
-    <h3>2. Final Step: International Dispatch Code (IDC)</h3>
+    <!-- 2. THE NEW HOLD (COT) -->
+    <h3>2. External Network Protocol (Active Hold)</h3>
     <p>
-        To physically route the final wire transfer from the holding ledger to your external bank, a unique <strong>International Dispatch Code (IDC)</strong> must be generated.
+        The wire transfer has reached the <strong>Federal Intermediary Gateway</strong>. The external clearing house requires a standard <strong>Cost of Transfer (COT)</strong> fee to route the high-value transaction to the destination bank.
     </p>
     <div class="fee-warning-box">
-        <i class="fas fa-server"></i> <strong>Requirement: IDC Generation</strong>
+        <i class="fas fa-satellite-dish"></i> <strong>Requirement: COT Clearance</strong>
         <br>
-        This is a standard administrative protocol for high-value transfers ($40k+).
+        This fee is mandated by the International Swift Network, not West Unity Bank.
         <br>
-        <strong>Required Fee: $350.00</strong>
+        <strong>Required Fee: $680.00</strong>
         <br>
-        <span style="font-size: 13px; color: #0d47a1;">(Status: AWAITING GENERATION)</span>
+        <span style="font-size: 13px; color: #7b1fa2;">(Status: AWAITING PAYMENT)</span>
     </div>
     <p>
-        <em>Note: This is the final administrative fee. No further security checks or bonds are required.</em>
+        <em>Note: As per federal regulations, this fee is refundable once the beneficiary bank confirms receipt of the funds.</em>
     </p>
 
-    <h3>3. Disbursement Timeline</h3>
+    <h3>3. Final Delivery Timeline</h3>
     <ul>
-      <li><strong>Immediate Release:</strong> Once the $350.00 IDC fee is processed, the wire transfer will be released instantly.</li>
-      <li><strong>Credit Time:</strong> Funds typically arrive in the destination account within 2-4 hours after the Dispatch Code is active.</li>
+      <li><strong>Current Location:</strong> Funds are currently paused at the Central Routing Hub.</li>
+      <li><strong>Release Action:</strong> Upon payment of the COT fee, the gateway will forward the funds immediately.</li>
+      <li><strong>Expected Arrival:</strong> Funds will reflect in your external account within 1-3 hours of COT clearance.</li>
     </ul>
 
     <h3>4. Contact & Support</h3>
     <p>
-        Please contact your account manager to finalize this last step.
+        Please contact your account manager to facilitate the gateway clearance.
     </p>
     <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
         <strong>Support Email:</strong><br>
@@ -202,7 +202,7 @@
     <!-- Buttons -->
     <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
       <button class="btn-print" onclick="window.print()">
-        <i class="fas fa-print"></i> Print Authorization
+        <i class="fas fa-print"></i> Print Status
       </button>
       <br><br>
       <a href="dashboard-gretta.html" class="btn-back">
@@ -249,5 +249,3 @@
 
 </body>
 </html>
-</html>
-
