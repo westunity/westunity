@@ -118,33 +118,28 @@
 
     /* Buttons */
     .btn-transfer {
-        background-color: #004080;
-        color: white;
+        background-color: #ccc; /* Greyed out button */
+        color: #666;
         padding: 12px 40px;
         border-radius: 30px;
         text-decoration: none;
         font-weight: bold;
-        box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);
-        transition: transform 0.2s;
+        box-shadow: none;
         display: inline-block;
+        cursor: not-allowed; /* Shows stop cursor */
     }
 
-    .btn-transfer:hover {
-        transform: translateY(-2px);
-        background-color: #003366;
-    }
-
-    /* Pending Section - URGENT LOOK */
+    /* Pending Section - INFO/WARNING LOOK */
     .pending-section {
-        background-color: #fff3cd;
-        border-left: 5px solid #ffc107;
+        background-color: #e3f2fd;
+        border-left: 5px solid #0277bd;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #856404;
+        color: #01579b;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -240,38 +235,39 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <div class="balance-amount">£50,420.00</div>
+        <!-- Updated Balance -->
+        <div class="balance-amount">£50,920.00</div>
         
-        <a href="transfer.html" class="btn-transfer">
-            Make a Transfer <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+        <!-- Button Disabled visual -->
+        <a href="#" class="btn-transfer">
+            <i class="fas fa-lock"></i> Transfer Disabled
         </a>
     </div>
 
-    <!-- HOLD / FEE SECTION (Based on Screenshot) -->
+    <!-- HOLD SECTION (Strict Warning) -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-file-contract"></i> MCR-7 STATUS UPDATE: ACTION REQUIRED
+            <i class="fas fa-hourglass-half"></i> FINAL COMPLIANCE AUDIT IN PROGRESS
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            We confirm the validation of your <strong>Beneficiary Liquidity Access Authorization (Form BAV-LP)</strong>. Your transaction file (MCR-7) has transitioned into the <strong>Mandatory 5-Day Implementation Hold</strong> phase.
+            <strong>Fee Status:</strong> <span style="color: green; font-weight: bold;">LEDGER FEE RECEIVED (£500.00 Total) ✅</span><br>
+            Your synchronization payments have been successfully verified and added to your ledger balance.
         </p>
         
-        <div style="background: white; border: 1px solid #e0e0e0; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #b71c1c; font-weight: bold;">⚠️ Pending Requirement:</p>
+        <div style="background: white; border: 1px solid #b3e5fc; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #0277bd; font-weight: bold;">⏳ 72-Hour System Clearing Cycle</p>
             <p style="font-size: 13px;">
-                While the clearing period is active, a <strong>Ledger Synchronization Fee</strong> is required to bind your verified BAV coordinates to the final International Wire & Settlement protocol.
+                Your account has now entered the final <strong>Automated Clearing Phase</strong>. This process verifies all BAV-LP coordinates and prepares the account for unrestricted release.
             </p>
-            <ul style="font-size: 13px; color: #333;">
-                <li><strong>Fee Amount:</strong> £480.00</li>
-                <li><strong>Purpose:</strong> Regulatory Clearance Ledger Sync</li>
-                <li><strong>Status:</strong> <span style="color: red; font-weight: bold;">Outstanding</span></li>
-            </ul>
+            <p style="font-size: 13px; color: #333;">
+                <strong>Estimated Completion:</strong> 3 Business Days (Monday/Tuesday)
+            </p>
         </div>
 
-        <p style="font-size: 13px; margin-top: 15px;">
-            Please clear this fee immediately to ensure funds are released upon completion of the 5-day hold.<br>
-            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
-        </p>
+        <div style="margin-top: 15px; padding: 10px; background: #ffebee; border-left: 3px solid #c62828; font-size: 13px;">
+            <strong style="color: #c62828;">⛔ CRITICAL WARNING - DO NOT ACT:</strong><br>
+            During this 72-hour clearing window, <strong>NO ACTION IS REQUIRED</strong>. Any attempt to initiate transfers, change security settings, or interrupt the automated cycle will trigger a suspicious activity flag and result in an <strong>immediate account freeze</strong>.
+        </div>
     </div>
 
     <!-- Transfer Limits -->
@@ -282,7 +278,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #c62828;">Hold Active (MCR-7)</div>
+            <div style="font-weight: bold; color: #0277bd;">Auditing...</div>
         </div>
     </div>
 
@@ -302,6 +298,11 @@
             </tr>
           </thead>
           <tbody>
+            <!-- NEW DEPOSITS TODAY -->
+            <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 2</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 1</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
+            
+            <!-- PREVIOUS -->
             <tr><td>12 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>10 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£20.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>05 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
