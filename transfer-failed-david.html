@@ -33,7 +33,7 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-        border-top: 5px solid #c62828; /* Red border for critical error */
+        border-top: 5px solid #c62828; /* Critical Red */
     }
 
     .bank-logo {
@@ -57,7 +57,7 @@
     }
 
     h1 {
-        color: #c62828;
+        color: #b71c1c;
         font-size: 24px;
         margin: 0 0 5px 0;
     }
@@ -82,13 +82,12 @@
         margin-bottom: 25px;
     }
 
-    .fee-highlight {
-        background: white;
-        padding: 3px 8px;
-        border-radius: 4px;
-        border: 1px solid #ffcdd2;
+    .status-ok {
+        color: #2e7d32;
         font-weight: bold;
-        color: #c62828;
+        background: #e8f5e9;
+        padding: 2px 5px;
+        border-radius: 4px;
     }
 
     .status-list {
@@ -104,6 +103,8 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        font-size: 13px;
+        color: #333;
     }
 
     /* Buttons */
@@ -147,21 +148,23 @@
     <img src="images/logo.png" alt="West Unity Bank" class="bank-logo">
     
     <div class="icon-box">
-        <i class="fas fa-hand-paper"></i>
+        <i class="fas fa-ban"></i>
     </div>
 
-    <h1>Transfer Blocked</h1>
-    <p class="error-code">Reference: MCR7-HOLD-ACTIVE</p>
+    <h1>Action Restricted</h1>
+    <p class="error-code">Error Code: SEC-AUDIT-LOCK-72H</p>
 
     <div class="message-box">
-        <strong><i class="fas fa-lock"></i> Regulatory Hold Active</strong><br><br>
-        This transaction cannot be processed. Your account is currently under a <strong>Mandatory 5-Day Implementation Hold</strong> as per the MCR-7 BAV-LP Protocol.<br><br>
-        To synchronize your clearance ledgers and enable outbound transfers, the outstanding <strong>Ledger Synchronization Fee</strong> must be cleared.
+        <strong><i class="fas fa-lock"></i> 72-Hour Audit Cycle Active</strong><br><br>
+        This transaction was automatically blocked. Your account is currently in a <strong>Mandatory Read-Only Mode</strong> while the final MCR-7 ledger synchronization completes.<br><br>
+        
+        <strong style="color: #b71c1c;">SECURITY WARNING:</strong> Do not attempt further transfers during this window. Repeated attempts may trigger a permanent suspicious activity freeze.
 
         <ul class="status-list">
-            <li><i class="fas fa-check-circle" style="color: green;"></i> <strong>Activation Fee (£210.00):</strong> PAID</li>
-            <li><i class="fas fa-check-circle" style="color: green;"></i> <strong>Compliance Fee (£85.00):</strong> PAID</li>
-            <li><i class="fas fa-times-circle" style="color: red;"></i> <strong>Ledger Sync Fee:</strong> <span class="fee-highlight">£480.00 OUTSTANDING</span></li>
+            <li><i class="fas fa-check-circle" style="color: green;"></i> <strong>Activation Fee:</strong> <span class="status-ok">CLEARED</span></li>
+            <li><i class="fas fa-check-circle" style="color: green;"></i> <strong>Compliance Fee:</strong> <span class="status-ok">CLEARED</span></li>
+            <li><i class="fas fa-check-circle" style="color: green;"></i> <strong>Ledger Sync Fee:</strong> <span class="status-ok">CLEARED</span></li>
+            <li><i class="fas fa-hourglass-half" style="color: orange;"></i> <strong>Final Release:</strong> PENDING (72 Hours)</li>
         </ul>
     </div>
 
@@ -170,8 +173,7 @@
     </a>
 
     <div class="support-link">
-        For immediate release instructions, contact:<br>
-        <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a>
+        Questions? Contact <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a>
     </div>
   </div>
 
