@@ -2,212 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - West Unity Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wire Status Report - West Unity Bank</title>
   
-  <!-- Link to main style -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
-  
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- PREMIUM DASHBOARD STYLES (GBP VERSION) --- */
-    
+    /* Premium Document Styles */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #f0f2f5;
         margin: 0;
+        color: #333;
     }
 
     .dashboard-container {
         max-width: 800px;
-        margin: 20px auto;
+        margin: 40px auto;
         background: white;
-        padding: 25px;
+        padding: 40px;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e0e0e0;
     }
 
-    .dashboard-header {
+    .doc-header {
         text-align: center;
-        border-bottom: 2px solid #f0f0f0;
-        padding-bottom: 15px;
-        margin-bottom: 20px;
+        border-bottom: 2px solid #004080;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .bank-logo {
-        max-width: 180px;
-        display: block;
-        margin: 0 auto 10px auto;
+        max-width: 150px;
+        margin-bottom: 10px;
     }
 
-    .dashboard-header h1 {
-        color: #004080;
-        margin: 10px 0 5px 0;
-    }
-
-    /* PREMIUM VIRTUAL CARD (Royal Blue for UK) */
-    .virtual-card {
-        background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
-        color: white;
-        padding: 25px;
-        border-radius: 16px;
-        position: relative;
-        box-shadow: 0 15px 35px rgba(20, 30, 48, 0.4);
-        margin: 25px 0;
-        overflow: hidden;
-        border: 1px solid #2c3e50;
-    }
-
-    .virtual-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -150%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255,255,0.1);
-        transform: skewX(-25deg);
-        animation: shine 8s infinite;
-    }
-
-    @keyframes shine {
-        0% { left: -150%; }
-        20% { left: 150%; }
-        100% { left: 150%; }
-    }
-    
-    .card-chip {
-        width: 45px;
-        height: 35px;
-        background: linear-gradient(135deg, #d4af37 0%, #f7ef8a 50%, #d4af37 100%);
-        border-radius: 6px;
-        margin-bottom: 20px;
-    }
-
-    .card-number {
+    h1 {
         font-size: 24px;
-        letter-spacing: 3px;
-        font-family: 'Courier New', monospace;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-
-    .card-details {
-        display: flex;
-        justify-content: space-between;
-        font-size: 11px;
+        color: #004080;
+        margin: 0;
         text-transform: uppercase;
         letter-spacing: 1px;
-        opacity: 0.9;
     }
 
-    /* Balance Section */
-    .balance-display {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    .balance-amount {
-        font-size: 36px;
-        font-weight: 800;
-        color: #004080;
-        margin: 10px 0;
-    }
-
-    /* Buttons */
-    .btn-transfer {
-        background-color: #ccc; /* Greyed out button */
-        color: #666;
-        padding: 12px 40px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: none;
-        display: inline-block;
-        cursor: not-allowed; /* Shows stop cursor */
-    }
-
-    /* Pending Section - EXTERNAL HOLD STYLE */
-    .pending-section {
-        background-color: #f3e5f5; /* Light Purple for External/Gateway */
-        border-left: 5px solid #7b1fa2;
-        padding: 20px;
-        border-radius: 6px;
-        margin-bottom: 30px;
-    }
-
-    .pending-header {
-        color: #4a148c;
-        font-weight: bold;
+    .meta-info {
         display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
-
-    /* Mobile Table Scroll */
-    .transaction-table-wrapper {
-        width: 100%;
-        overflow-x: auto;
-        margin-top: 15px;
+        justify-content: space-between;
+        background: #f8f9fa;
+        padding: 15px;
         border-radius: 8px;
-        border: 1px solid #eee;
-    }
-
-    table {
-        width: 100%;
-        min-width: 600px;
-        border-collapse: collapse;
-    }
-
-    th {
-        background-color: #004080;
-        color: white;
-        padding: 15px;
+        margin-bottom: 30px;
         font-size: 14px;
-        white-space: nowrap;
+        border-left: 4px solid #004080;
     }
 
-    td {
-        padding: 15px;
+    h3 {
+        color: #004080;
         border-bottom: 1px solid #eee;
-        font-size: 14px;
-        white-space: nowrap;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 15px;
+        line-height: 1.6;
         color: #555;
     }
 
-    .status-completed {
-        background: #e8f5e9;
-        color: #2e7d32;
-        padding: 5px 10px;
-        border-radius: 12px;
-        font-weight: bold;
-        font-size: 12px;
+    ul {
+        padding-left: 20px;
     }
 
-    .status-blocked {
-        background: #ffebee;
-        color: #c62828;
-        padding: 5px 10px;
-        border-radius: 12px;
-        font-weight: bold;
-        font-size: 12px;
-    }
-    
-    .badge-external {
-        background: #4a148c;
-        color: white;
-        padding: 4px 8px;
-        font-size: 11px;
-        border-radius: 4px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        display: inline-block;
+    li {
         margin-bottom: 10px;
+    }
+
+    /* Status Boxes */
+    .fee-paid-box {
+        background-color: #e8f5e9;
+        border: 1px solid #c8e6c9;
+        padding: 15px;
+        border-radius: 6px;
+        color: #2e7d32;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .fee-warning-box {
+        background-color: #f3e5f5;
+        border: 1px solid #e1bee7;
+        padding: 15px;
+        border-radius: 6px;
+        color: #4a148c;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .btn-back {
+        display: inline-block;
+        background-color: #004080;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+        margin-top: 20px;
+    }
+
+    .btn-back:hover {
+        background-color: #003366;
+    }
+
+    .btn-print {
+        background: none;
+        border: 1px solid #ccc;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        color: #666;
     }
   </style>
 </head>
@@ -215,154 +134,90 @@
 
   <div class="dashboard-container">
     
-    <!-- Header -->
-    <div class="dashboard-header">
-      <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
-      <h1>Welcome, David Edmondson</h1>
-      <p style="color: #666; font-size: 13px;">Online Banking • <span id="todayDate"></span></p>
+    <!-- Document Header -->
+    <div class="doc-header">
+        <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
+        <h1>Wire Release Status Report</h1>
     </div>
 
-    <!-- VIRTUAL CARD -->
-    <div class="virtual-card">
-        <i class="fas fa-globe-europe" style="position: absolute; right: -20px; top: -20px; font-size: 180px; opacity: 0.1;"></i>
-        
-        <div class="card-chip"></div>
-        <div class="card-number">5412 75XX XXXX 3901</div>
-        
-        <div class="card-details">
-            <div>
-                <span>Account Holder</span><br>
-                <strong>DAVID EDMONDSON</strong>
-            </div>
-            <div>
-                <span>Sort Code</span><br>
-                <strong>23-01-20</strong>
-            </div>
-            <div>
-                <span>Status</span><br>
-                <strong>PLATINUM</strong>
-            </div>
-        </div>
-    </div>
-
-    <!-- Balance Info -->
-    <div class="balance-display">
-        <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: £50,920 + 300 + 200 = £51,420 -->
-        <div class="balance-amount">£51,420.00</div>
-        
-        <!-- Button Disabled -->
-        <a href="#" class="btn-transfer">
-            <i class="fas fa-lock"></i> Transfer Paused
-        </a>
-    </div>
-
-    <!-- NEW HOLD SECTION -->
-    <div class="pending-section">
-        <span class="badge-external"><i class="fas fa-network-wired"></i> WIRE STATUS: IN TRANSIT</span>
-        <div class="pending-header" style="margin-top: 10px;">
-            HELD AT INTERMEDIARY GATEWAY
-        </div>
-        <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Audit Result:</strong> <span style="color: green; font-weight: bold;">PASSED ✅</span><br>
-            West Unity Bank has fully released your funds. The wire transfer has left our internal system and is currently moving through the <strong>International Clearance Network</strong>.
-        </p>
-        
-        <div style="background: white; border: 1px solid #e1bee7; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #6a1b9a; font-weight: bold;">⚠️ Routing Stop: Cost of Transfer (COT)</p>
-            <p style="font-size: 13px;">
-                The receiving network requires a standard <strong>COT Clearance Fee</strong> to deliver the high-value transaction to the destination bank. This is an external requirement.
-            </p>
-            <ul style="font-size: 13px; color: #4a148c; font-weight: bold; margin-top: 10px;">
-                <li>Required Gateway Fee: £850.00</li>
-                <li>Status: <span style="background: #f3e5f5; color: #7b1fa2; padding: 2px 5px;">AWAITING CLEARANCE</span></li>
-            </ul>
-        </div>
-
-        <div style="margin-top: 15px; padding: 10px; background: #fffde7; border-left: 3px solid #fbc02d; font-size: 13px;">
-            <strong style="color: #f57f17;">⚠ CAUTION - FUNDS IN TRANSIT:</strong><br>
-            Since the funds have already left West Unity Bank, <strong>DO NOT</strong> attempt to cancel, dispute, or initiate a chargeback. Any negative action on the account will be flagged as "Interception Fraud" by the Gateway, causing the funds to be permanently frozen in the international network.
-        </div>
-
-        <p style="font-size: 13px; margin-top: 15px; color: #666;">
-            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
-        </p>
-    </div>
-
-    <!-- Transfer Limits -->
-    <div style="display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 30px;">
+    <!-- User Details -->
+    <div class="meta-info">
         <div>
-            <div style="font-size: 12px; color: #666;">DAILY LIMIT</div>
-            <div style="font-weight: bold; color: #333;">£50,000.00</div>
+            <strong>Account Holder:</strong> David Edmondson<br>
+            <strong>Wire Status:</strong> <span style="color:#7b1fa2; font-weight:bold;">PARTIAL CLEARANCE</span>
         </div>
         <div style="text-align: right;">
-            <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #7b1fa2;">Transit Hold</div>
+            <strong>Date:</strong> 26 December 2025<br>
+            <strong>Gateway ID:</strong> FED-COT-991
         </div>
     </div>
 
-    <!-- Transaction History (Updated Dates) -->
-    <div>
-      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Transaction History</h3>
-      
-      <div class="transaction-table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Description</th>
-              <th>Type</th>
-              <th>Amount</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- NEW DEPOSITS TODAY (Dec 23) -->
-            <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            
-            <!-- PREVIOUS -->
-            <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 2</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 1</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>12 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>10 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£20.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>05 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>28 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£100.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>20 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£210.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>15 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£160.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>02 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£327.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>28 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>15 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>10 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,107.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>01 Oct 2025</td><td>Transfer Attempt</td><td>Debit</td><td style="color: red;">−£1,000.00</td><td><span class="status-blocked">Blocked (Hold)</span></td></tr>
-            <tr><td>28 Sep 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,500.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>15 Sep 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£3,000.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>01 Sep 2025</td><td>Disability Support</td><td>Credit</td><td style="color: green;">+£6,000.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>25 Aug 2025</td><td>Utility Bill Payment</td><td>Debit</td><td style="color: red;">−£220.75</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>10 Aug 2025</td><td>NHS Support Grant</td><td>Credit</td><td style="color: green;">+£5,500.00</td><td><span class="status-completed">Completed</span></td></tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- 1. COMPLETED STEPS -->
+    <h3>1. Internal Bank Clearance (Complete)</h3>
+    <p>West Unity Bank confirms that all internal security protocols have been satisfied. The funds have been successfully debited from the holding ledger and released for dispatch.</p>
+    <div class="fee-paid-box">
+        <ul style="margin: 0; padding-left: 20px;">
+            <li><i class="fas fa-check-circle"></i> <strong>Activation Fee (£210):</strong> PAID</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Compliance Fee (£85):</strong> PAID</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Ledger Synchronization (£500):</strong> PAID</li>
+        </ul>
+        <div style="margin-top: 10px; font-size: 13px; border-top: 1px solid #c8e6c9; padding-top: 5px;">
+            Status: INTERNAL RELEASE AUTHORIZED.
+        </div>
     </div>
 
-    <!-- Footer Links -->
-    <div class="logout-btn">
-      <a href="terms-david.html" style="font-size: 13px; color: #004080; background: none;">View Terms</a>
+    <!-- 2. CURRENT GATEWAY STATUS -->
+    <h3>2. External Gateway Protocol (Active)</h3>
+    <p>
+        The wire transfer is currently staged at the <strong>Federal Intermediary Gateway</strong>. The Cost of Transfer (COT) is required to route the funds to your external bank account.
+    </p>
+    <div class="fee-warning-box">
+        <i class="fas fa-satellite-dish"></i> <strong>Payment Status: Partial Receipt</strong>
+        <br>
+        We have received a partial payment towards the COT requirement.
+        <br><br>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px;">
+            <li>Total COT Fee: <strong>£850.00</strong></li>
+            <li style="color: green;">Less Payment Received (26 Dec): <strong>-£500.00</strong></li>
+            <li style="border-top: 1px solid #4a148c; margin-top: 5px; padding-top: 5px; color: #d50000; font-weight: bold;">OUTSTANDING BALANCE: £350.00</li>
+        </ul>
+    </div>
+
+    <h3>3. Priority Release Guarantee</h3>
+    <p>
+        The routing path has been verified and held open.
+    </p>
+    <ul>
+      <li><strong>Immediate Action:</strong> Upon clearance of the final <strong>£350.00</strong>, the gateway will instantly release the full wire sum (£51,920.00).</li>
+      <li><strong>Delivery Window:</strong> Funds are guaranteed to reflect in your designated external account within <strong>3 hours</strong> of the final payment.</li>
+    </ul>
+
+    <h3>4. Contact & Support</h3>
+    <p>
+        To avoid a gateway timeout, please clear the remaining balance immediately.
+    </p>
+    <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
+        <strong>Support Email:</strong><br>
+        <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
+    </p>
+
+    <!-- Buttons -->
+    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
+      <button class="btn-print" onclick="window.print()">
+        <i class="fas fa-print"></i> Print Status
+      </button>
       <br><br>
-      <a href="index.html" style="background: #c62828;">Log Out</a>
+      <a href="dashboard-david.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+      </a>
     </div>
 
   </div>
 
-  <footer>
-    &copy; 2025 West Unity Bank. All rights reserved.
+  <footer style="text-align: center; margin-bottom: 40px; font-size: 12px; color: #999;">
+    &copy; 2025 West Unity Bank. Member FDIC. All rights reserved.<br>
+    International Banking Division.
   </footer>
-
-  <!-- Date Script -->
-  <script>
-    var today = new Date();
-    document.getElementById('todayDate').textContent = today.toLocaleDateString('en-GB'); // UK Date format
-  </script>
 
   <!-- ❄️ Snow Effect -->
   <script>
@@ -379,12 +234,11 @@
     }
   </script>
 
-  <!-- Snow CSS -->
   <style>
     .snowflake {
       position: fixed;
       top: -10px;
-      background: #ccc;
+      background: white; 
       border-radius: 50%;
       pointer-events: none;
       animation: fall linear infinite;
