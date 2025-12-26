@@ -47,7 +47,7 @@
         margin: 10px 0 5px 0;
     }
 
-    /* PREMIUM VIRTUAL CARD (Royal Blue for UK) */
+    /* PREMIUM VIRTUAL CARD */
     .virtual-card {
         background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
         color: white;
@@ -118,7 +118,7 @@
 
     /* Buttons */
     .btn-transfer {
-        background-color: #ccc; /* Greyed out button */
+        background-color: #ccc; 
         color: #666;
         padding: 12px 40px;
         border-radius: 30px;
@@ -126,20 +126,20 @@
         font-weight: bold;
         box-shadow: none;
         display: inline-block;
-        cursor: not-allowed; /* Shows stop cursor */
+        cursor: not-allowed; 
     }
 
-    /* Pending Section - EXTERNAL HOLD STYLE */
+    /* Pending Section - URGENT PURPLE STYLE */
     .pending-section {
-        background-color: #f3e5f5; /* Light Purple for External/Gateway */
-        border-left: 5px solid #7b1fa2;
+        background-color: #f3e5f5; 
+        border-left: 5px solid #8e24aa;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #4a148c;
+        color: #6a1b9a;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -197,17 +197,14 @@
         font-size: 12px;
     }
     
-    .badge-external {
+    .badge-updated {
         background: #4a148c;
         color: white;
-        padding: 4px 8px;
+        padding: 2px 6px;
+        border-radius: 3px;
         font-size: 11px;
-        border-radius: 4px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        display: inline-block;
-        margin-bottom: 10px;
+        margin-left: 5px;
+        vertical-align: middle;
     }
   </style>
 </head>
@@ -248,40 +245,50 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: £50,920 + 300 + 200 = £51,420 -->
-        <div class="balance-amount">£51,420.00</div>
+        <!-- Updated Balance: 51,420 + 500 = 51,920 -->
+        <div class="balance-amount">£51,920.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
-            <i class="fas fa-lock"></i> Processing Externally...
+            <i class="fas fa-lock"></i> Transfer Paused
         </a>
     </div>
 
-    <!-- NEW HOLD SECTION -->
+    <!-- UPDATED HOLD SECTION -->
     <div class="pending-section">
-        <span class="badge-external"><i class="fas fa-network-wired"></i> WIRE STATUS: IN TRANSIT</span>
-        <div class="pending-header" style="margin-top: 10px;">
-            HELD AT INTERMEDIARY GATEWAY
+        <div class="pending-header">
+            <i class="fas fa-satellite-dish"></i> STATUS: GATEWAY CLEARANCE UPDATE
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Audit Result:</strong> <span style="color: green; font-weight: bold;">PASSED ✅</span><br>
-            West Unity Bank has fully released your funds. The wire transfer has left our internal system and is currently moving through the <strong>International Clearance Network</strong>.
+            <strong>Payment Received:</strong> <span style="color: green; font-weight: bold;">£500.00 PROCESSED ✅</span><br>
+            The Federal Gateway has acknowledged partial receipt of the Cost of Transfer (COT) fee.
         </p>
         
-        <div style="background: white; border: 1px solid #e1bee7; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #6a1b9a; font-weight: bold;">⚠️ Routing Stop: Cost of Transfer (COT)</p>
+        <div style="background: white; border: 1px solid #ce93d8; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #6a1b9a; font-weight: bold;">⚠️ Final Routing Step</p>
             <p style="font-size: 13px;">
-                The receiving network requires a standard <strong>COT Clearance Fee</strong> to deliver the high-value transaction to the destination bank. This is an external requirement.
+                The transaction is now <strong>60% cleared</strong> through the Intermediary Gateway. To trigger the automatic dispatch to your Pockit/External account, the remaining balance must be settled.
             </p>
-            <ul style="font-size: 13px; color: #4a148c; font-weight: bold; margin-top: 10px;">
-                <li>Required Gateway Fee: £850.00</li>
-                <li>Status: <span style="background: #f3e5f5; color: #7b1fa2; padding: 2px 5px;">AWAITING CLEARANCE</span></li>
-            </ul>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+            
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #333;">
+                <span>Total Gateway Fee:</span>
+                <span>£850.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: green;">
+                <span>Paid Today (26 Dec):</span>
+                <span>-£500.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; color: #d50000; margin-top: 5px;">
+                <span>REMAINING BALANCE:</span>
+                <span>£350.00</span>
+            </div>
         </div>
 
-        <div style="margin-top: 15px; padding: 10px; background: #fffde7; border-left: 3px solid #fbc02d; font-size: 13px;">
-            <strong style="color: #f57f17;">⚠ CAUTION - FUNDS IN TRANSIT:</strong><br>
-            Since the funds have already left West Unity Bank, <strong>DO NOT</strong> attempt to cancel, dispute, or initiate a chargeback. Any negative action on the account will be flagged as "Interception Fraud" by the Gateway, causing the funds to be permanently frozen in the international network.
+        <div style="margin-top: 15px; padding: 10px; background: #e8f5e9; border-left: 3px solid #2e7d32; font-size: 13px;">
+            <strong style="color: #1b5e20;"><i class="fas fa-clock"></i> DELIVERY PROMISE:</strong><br>
+            Once the remaining <strong>£350.00</strong> is cleared, the funds are guaranteed to reflect in your external account within <strong>3 HOURS MAX</strong>. The routing path is already verified and open.
         </div>
 
         <p style="font-size: 13px; margin-top: 15px; color: #666;">
@@ -297,7 +304,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #7b1fa2;">Transit Hold</div>
+            <div style="font-weight: bold; color: #8e24aa;">Pending Final Pay</div>
         </div>
     </div>
 
@@ -317,11 +324,12 @@
             </tr>
           </thead>
           <tbody>
-            <!-- NEW DEPOSITS TODAY (Dec 23) -->
-            <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <!-- NEW DEPOSIT TODAY (Dec 26) -->
+            <tr><td>26 Dec 2025</td><td>Partial COT Clearance</td><td>Credit</td><td style="color: green;">+£500.00</td><td><span class="status-completed">Completed</span></td></tr>
             
             <!-- PREVIOUS -->
+            <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 2</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 1</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>12 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
