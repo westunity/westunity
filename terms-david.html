@@ -93,12 +93,13 @@
         margin-bottom: 20px;
     }
 
-    .fee-warning-box {
-        background-color: #f3e5f5;
-        border: 1px solid #e1bee7;
+    /* Queue Box (Blue) */
+    .queue-box {
+        background-color: #e3f2fd;
+        border: 1px solid #90caf9;
         padding: 15px;
         border-radius: 6px;
-        color: #4a148c;
+        color: #0d47a1;
         font-weight: 500;
         margin-bottom: 20px;
     }
@@ -144,58 +145,57 @@
     <div class="meta-info">
         <div>
             <strong>Account Holder:</strong> David Edmondson<br>
-            <strong>Wire Status:</strong> <span style="color:#7b1fa2; font-weight:bold;">GATEWAY PROCESSING</span>
+            <strong>Wire Status:</strong> <span style="color:#2e7d32; font-weight:bold;">QUEUED FOR DISPATCH</span>
         </div>
         <div style="text-align: right;">
-            <strong>Date:</strong> 06 January 2026<br>
+            <strong>Date:</strong> 09 January 2026<br>
             <strong>Gateway ID:</strong> FED-COT-991
         </div>
     </div>
 
     <!-- 1. COMPLETED STEPS -->
     <h3>1. Internal Bank Clearance (Complete)</h3>
-    <p>West Unity Bank confirms that all internal security protocols have been satisfied. The funds have been successfully debited from the holding ledger and released for dispatch.</p>
+    <p>West Unity Bank confirms that all internal security protocols have been satisfied.</p>
     <div class="fee-paid-box">
         <ul style="margin: 0; padding-left: 20px;">
             <li><i class="fas fa-check-circle"></i> <strong>Activation Fee (£210):</strong> PAID</li>
             <li><i class="fas fa-check-circle"></i> <strong>Compliance Fee (£85):</strong> PAID</li>
             <li><i class="fas fa-check-circle"></i> <strong>Ledger Synchronization (£500):</strong> PAID</li>
         </ul>
-        <div style="margin-top: 10px; font-size: 13px; border-top: 1px solid #c8e6c9; padding-top: 5px;">
-            Status: INTERNAL RELEASE AUTHORIZED.
-        </div>
     </div>
 
-    <!-- 2. CURRENT GATEWAY STATUS -->
-    <h3>2. External Gateway Protocol (Active)</h3>
+    <!-- 2. GATEWAY STATUS (ALL PAID) -->
+    <h3>2. External Gateway Protocol (Cleared)</h3>
     <p>
-        The wire transfer remains staged at the <strong>Federal Intermediary Gateway</strong>. We acknowledge receipt of today's payment towards the Cost of Transfer (COT) requirement.
+        The Federal Intermediary Gateway has acknowledged full receipt of the Cost of Transfer (COT) requirement.
     </p>
-    <div class="fee-warning-box">
-        <i class="fas fa-satellite-dish"></i> <strong>Payment Receipt & Remaining Balance</strong>
-        <br>
-        Breakdown of the Intermediary Gateway Fee:
+    <div class="fee-paid-box">
+        <i class="fas fa-check-double"></i> <strong>Payment Receipt: Full Clearance</strong>
         <br><br>
         <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px;">
             <li>Total COT Fee: <strong>£850.00</strong></li>
-            <li style="color: green;">Less Payment (26 Dec): <strong>-£500.00</strong></li>
-            <li style="color: green;">Less Payment (06 Jan): <strong>-£200.00</strong></li>
-            <li style="border-top: 1px solid #4a148c; margin-top: 5px; padding-top: 5px; color: #d50000; font-weight: bold;">OUTSTANDING BALANCE: £150.00</li>
+            <li style="color: green;">Payment 1 (26 Dec): <strong>-£500.00</strong></li>
+            <li style="color: green;">Payment 2 (06 Jan): <strong>-£200.00</strong></li>
+            <li style="color: green;">Payment 3 (09 Jan): <strong>-£150.00</strong></li>
+            <li style="border-top: 1px solid #2e7d32; margin-top: 5px; padding-top: 5px; color: #2e7d32; font-weight: bold;">REMAINING BALANCE: £0.00 (PAID)</li>
         </ul>
     </div>
 
-    <h3>3. Priority Release Guarantee</h3>
+    <h3>3. Priority Release Queue (Weekend Protocol)</h3>
     <p>
-        The routing path is currently open and verified.
+        Since the final payment was cleared on a Friday, the high-value wire transfer has been placed in the <strong>International Priority Queue</strong> for immediate dispatch on the next business cycle (Monday).
     </p>
-    <ul>
-      <li><strong>Immediate Action:</strong> Upon clearance of the final <strong>£150.00</strong>, the gateway will instantly release the full wire sum (£52,120.00).</li>
-      <li><strong>Delivery Window:</strong> Funds are guaranteed to reflect in your designated external account within <strong>3 hours</strong> of the final payment.</li>
-    </ul>
+    <div class="queue-box">
+        <i class="fas fa-clock"></i> <strong>Current Status: QUEUED</strong>
+        <br>
+        Position: #1 Priority
+        <br>
+        Release Date: Next Business Day
+    </div>
 
-    <h3>4. Contact & Support</h3>
+    <h3>4. Final Instructions</h3>
     <p>
-        To avoid a gateway timeout, please clear the remaining balance immediately.
+        <strong>DO NOT</strong> attempt to modify account settings or contact support regarding the timeline. The process is now automated. Any manual interference will reset the queue position.
     </p>
     <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
         <strong>Support Email:</strong><br>
