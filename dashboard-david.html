@@ -129,17 +129,17 @@
         cursor: not-allowed; 
     }
 
-    /* Pending Section - URGENT PURPLE STYLE */
+    /* Pending Section - INFO/SUCCESS STYLE */
     .pending-section {
-        background-color: #f3e5f5; 
-        border-left: 5px solid #8e24aa;
+        background-color: #e8f5e9; /* Green/Light for Success */
+        border-left: 5px solid #2e7d32;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #6a1b9a;
+        color: #1b5e20;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -197,8 +197,8 @@
         font-size: 12px;
     }
     
-    .badge-updated {
-        background: #4a148c;
+    .badge-queue {
+        background: #0277bd;
         color: white;
         padding: 2px 6px;
         border-radius: 3px;
@@ -245,59 +245,40 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: £51,920 + 200 = £52,120 -->
-        <div class="balance-amount">£52,120.00</div>
+        <!-- Updated Balance: £52,120 + 150 = £52,270 -->
+        <div class="balance-amount">£52,270.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
-            <i class="fas fa-lock"></i> Transfer Paused
+            <i class="fas fa-lock"></i> Processing...
         </a>
     </div>
 
-    <!-- UPDATED HOLD SECTION -->
+    <!-- FINAL HOLD SECTION -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-satellite-dish"></i> STATUS: GATEWAY CLEARANCE UPDATE
+            <i class="fas fa-check-circle"></i> ALL FEES CLEARED - QUEUED FOR RELEASE
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Payment Received:</strong> <span style="color: green; font-weight: bold;">£200.00 PROCESSED ✅</span><br>
-            The Federal Gateway has acknowledged partial receipt of the Cost of Transfer (COT) fee.
+            <strong>COT Status:</strong> <span style="color: green; font-weight: bold;">FULL PAYMENT RECEIVED ✅</span><br>
+            The Intermediary Gateway has confirmed receipt of the final £150.00. The wire transfer is now fully funded and authorized.
         </p>
         
-        <div style="background: white; border: 1px solid #ce93d8; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #6a1b9a; font-weight: bold;">⚠️ Final Routing Step</p>
+        <div style="background: white; border: 1px solid #c8e6c9; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #1b5e20; font-weight: bold;">🚀 Final Dispatch Queue (Weekend Protocol)</p>
             <p style="font-size: 13px;">
-                The transaction is now <strong>85% cleared</strong> through the Intermediary Gateway. To trigger the automatic dispatch to your Pockit/External account, the remaining balance must be settled.
+                Due to standard international banking hours, high-value wire transfers cannot be settled over the weekend. Your transaction has been placed in the **Priority Release Queue** for immediate dispatch on the next business cycle.
             </p>
-            
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
-            
-            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #333;">
-                <span>Total Gateway Fee:</span>
-                <span>£850.00</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: green;">
-                <span>Paid (26 Dec):</span>
-                <span>-£500.00</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: green;">
-                <span>Paid (6 Jan):</span>
-                <span>-£200.00</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; color: #d50000; margin-top: 5px;">
-                <span>REMAINING BALANCE:</span>
-                <span>£150.00</span>
-            </div>
+            <ul style="font-size: 13px; color: #0277bd; font-weight: bold; margin-top: 10px;">
+                <li>Queued Position: #1 (Priority)</li>
+                <li>Status: <span class="badge-queue">SCHEDULED FOR MONDAY</span></li>
+            </ul>
         </div>
 
-        <div style="margin-top: 15px; padding: 10px; background: #e8f5e9; border-left: 3px solid #2e7d32; font-size: 13px;">
-            <strong style="color: #1b5e20;"><i class="fas fa-clock"></i> DELIVERY PROMISE:</strong><br>
-            Once the remaining <strong>£150.00</strong> is cleared, the funds are guaranteed to reflect in your external account within <strong>3 HOURS MAX</strong>. The routing path is already verified and open.
+        <div style="margin-top: 15px; padding: 10px; background: #fff3e0; border-left: 3px solid #ff9800; font-size: 13px;">
+            <strong style="color: #e65100;">⛔ DO NOT DISTURB:</strong><br>
+            Your funds are locked in the outgoing queue. <strong>NO FURTHER ACTION IS REQUIRED.</strong> Any attempt to modify account settings or contact support regarding this automated process may cause the queue to reset. Please wait for the Monday confirmation email.
         </div>
-
-        <p style="font-size: 13px; margin-top: 15px; color: #666;">
-            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
-        </p>
     </div>
 
     <!-- Transfer Limits -->
@@ -308,7 +289,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #8e24aa;">Pending Final Pay</div>
+            <div style="font-weight: bold; color: #2e7d32;">Queued</div>
         </div>
     </div>
 
@@ -328,10 +309,11 @@
             </tr>
           </thead>
           <tbody>
-            <!-- NEW DEPOSIT TODAY (Jan 6, 2026) -->
-            <tr><td>06 Jan 2026</td><td>Partial COT Clearance</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <!-- NEW DEPOSIT TODAY (Jan 9, 2026) -->
+            <tr><td>09 Jan 2026</td><td>Final COT Clearance</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             
             <!-- PREVIOUS -->
+            <tr><td>06 Jan 2026</td><td>Partial COT Clearance</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>26 Dec 2025</td><td>Partial COT Clearance</td><td>Credit</td><td style="color: green;">+£500.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
