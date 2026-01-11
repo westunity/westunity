@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Action Blocked - West Unity Bank</title>
+  <title>Transaction Paused - West Unity Bank</title>
   
   <!-- CSS Links -->
   <link rel="stylesheet" href="style.css" />
@@ -33,8 +33,8 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-        /* Blue Border for Queue/Info Status */
-        border-top: 5px solid #0277bd; 
+        /* Blue Border for Regulatory/Official Status */
+        border-top: 5px solid #1565c0; 
     }
 
     .bank-logo {
@@ -44,7 +44,7 @@
 
     .icon-box {
         font-size: 60px;
-        color: #0277bd; 
+        color: #1565c0; 
         margin-bottom: 20px;
         animation: pulse 2s infinite;
     }
@@ -56,7 +56,7 @@
     }
 
     h1 {
-        color: #01579b;
+        color: #0d47a1;
         font-size: 24px;
         margin: 0 0 10px 0;
     }
@@ -70,9 +70,9 @@
     }
 
     .message-box {
-        background-color: #e1f5fe;
-        border: 1px solid #b3e5fc;
-        color: #01579b;
+        background-color: #e3f2fd;
+        border: 1px solid #90caf9;
+        color: #0d47a1;
         padding: 20px;
         border-radius: 8px;
         font-size: 14px;
@@ -86,8 +86,8 @@
         background: white;
         padding: 3px 8px;
         border-radius: 4px;
-        border: 1px solid #0277bd;
-        color: #0277bd;
+        border: 1px solid #1565c0;
+        color: #1565c0;
     }
 
     .status-ok {
@@ -127,80 +127,4 @@
 
     footer {
         margin-top: 20px;
-        font-size: 12px;
-        color: #999;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="dashboard-container">
-    <img src="images/logo.png" alt="West Unity Bank" class="bank-logo">
-    
-    <div class="icon-box">
-        <i class="fas fa-history"></i>
-    </div>
-
-    <h1>Action Restricted: Queued</h1>
-    <p class="error-code">Status Code: QUEUE-PRIORITY-HOLD</p>
-
-    <div class="message-box">
-        <strong><i class="fas fa-info-circle"></i> Transfer Already Initiated</strong><br><br>
-        You cannot start a new transfer because your funds are currently in the <strong>Priority Release Queue</strong> for Monday dispatch.<br><br>
-        We confirm that all regulatory fees, including the full COT Clearance, have been received.
-        
-        <ul style="margin: 15px 0; padding-left: 20px; list-style: none;">
-            <li style="margin-bottom: 5px;">✅ Internal Ledger: <span class="status-ok">CLEARED</span></li>
-            <li style="margin-bottom: 5px;">✅ Gateway COT Fee: <span class="status-ok">PAID (£850)</span></li>
-            <li>⏳ <strong>Current Status:</strong> <span class="status-highlight">AWAITING MONDAY DISPATCH</span></li>
-        </ul>
-        <br>
-        <strong>Warning:</strong> Creating duplicate requests will reset your queue position. Please wait for the automated release.
-    </div>
-
-    <a href="dashboard-david.html" class="btn-home">
-        <i class="fas fa-arrow-left"></i> Return to Dashboard
-    </a>
-
-    <div class="support-link">
-        Questions? Contact <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 West Unity Bank. Member FDIC. All rights reserved.
-  </footer>
-
-  <!-- ❄️ Snow Effect -->
-  <script>
-    const snowCount = 50;
-    for (let i = 0; i < snowCount; i++) {
-      let flake = document.createElement("div");
-      flake.className = "snowflake";
-      flake.style.left = Math.random() * 100 + "vw";
-      flake.style.animationDuration = 4 + Math.random() * 6 + "s";
-      flake.style.opacity = 0.5 + Math.random() * 0.5;
-      flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
-      flake.style.animationDelay = Math.random() * 5 + "s";
-      document.body.appendChild(flake);
-    }
-  </script>
-
-  <!-- Snow CSS -->
-  <style>
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      background: #ccc; 
-      border-radius: 50%;
-      pointer-events: none;
-      animation: fall linear infinite;
-      z-index: 9999;
-    }
-    @keyframes fall {
-      to { transform: translateY(110vh); }
-    }
-  </style>
-
-</body>
-</html>
+        font-size
