@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wire Status Report - West Unity Bank</title>
+  <title>Regulatory Status Report - West Unity Bank</title>
   
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -93,8 +93,8 @@
         margin-bottom: 20px;
     }
 
-    /* Queue Box (Blue) */
-    .queue-box {
+    /* FCA Info Box (Blue) */
+    .fca-box {
         background-color: #e3f2fd;
         border: 1px solid #90caf9;
         padding: 15px;
@@ -138,64 +138,62 @@
     <!-- Document Header -->
     <div class="doc-header">
         <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
-        <h1>Wire Release Status Report</h1>
+        <h1>International Clearing Report</h1>
     </div>
 
     <!-- User Details -->
     <div class="meta-info">
         <div>
             <strong>Account Holder:</strong> David Edmondson<br>
-            <strong>Wire Status:</strong> <span style="color:#2e7d32; font-weight:bold;">QUEUED FOR DISPATCH</span>
+            <strong>Wire Status:</strong> <span style="color:#1565c0; font-weight:bold;">ARRIVED IN UK (REVIEW)</span>
         </div>
         <div style="text-align: right;">
-            <strong>Date:</strong> 09 January 2026<br>
-            <strong>Gateway ID:</strong> FED-COT-991
+            <strong>Date:</strong> 12 January 2026<br>
+            <strong>Ref ID:</strong> FCA-REV-50K
         </div>
     </div>
 
     <!-- 1. COMPLETED STEPS -->
-    <h3>1. Internal Bank Clearance (Complete)</h3>
-    <p>West Unity Bank confirms that all internal security protocols have been satisfied. The funds have been successfully debited from the holding ledger and released for dispatch.</p>
+    <h3>1. Clearance & Fee History</h3>
+    <p>We confirm that all bank-side and gateway requirements have been fully satisfied. The transaction has successfully exited the international banking layer.</p>
     <div class="fee-paid-box">
         <ul style="margin: 0; padding-left: 20px;">
-            <li><i class="fas fa-check-circle"></i> <strong>Activation Fee (£210):</strong> PAID</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Compliance Fee (£85):</strong> PAID</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Internal Bank Fees:</strong> PAID</li>
             <li><i class="fas fa-check-circle"></i> <strong>Ledger Synchronization (£500):</strong> PAID</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Intermediary Gateway COT (£850):</strong> PAID</li>
         </ul>
+        <div style="margin-top: 10px; font-size: 13px; border-top: 1px solid #c8e6c9; padding-top: 5px;">
+            Status: FUNDS CLEARED TO DESTINATION COUNTRY.
+        </div>
     </div>
 
-    <!-- 2. GATEWAY STATUS (ALL PAID) -->
-    <h3>2. External Gateway Protocol (Cleared)</h3>
+    <!-- 2. CURRENT STATUS (FCA) -->
+    <h3>2. UK Financial Conduct Authority (FCA) Protocol</h3>
     <p>
-        The Federal Intermediary Gateway has acknowledged full receipt of the Cost of Transfer (COT) requirement.
+        Upon arrival at the UK Clearing House, the transaction was flagged for a mandatory <strong>Source of Funds Verification</strong>. This is an automatic compliance trigger for all incoming personal transfers exceeding <strong>£50,000.00</strong>.
     </p>
-    <div class="fee-paid-box">
-        <i class="fas fa-check-double"></i> <strong>Payment Receipt: Full Clearance</strong>
+    <div class="fca-box">
+        <i class="fas fa-balance-scale"></i> <strong>Current Status: Regulatory Review</strong>
         <br><br>
         <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px;">
-            <li>Total COT Fee: <strong>£850.00</strong></li>
-            <li style="color: green;">Payment 1 (26 Dec): <strong>-£500.00</strong></li>
-            <li style="color: green;">Payment 2 (06 Jan): <strong>-£200.00</strong></li>
-            <li style="color: green;">Payment 3 (09 Jan): <strong>-£150.00</strong></li>
-            <li style="border-top: 1px solid #2e7d32; margin-top: 5px; padding-top: 5px; color: #2e7d32; font-weight: bold;">REMAINING BALANCE: £0.00 (PAID)</li>
+            <li><strong>Regulatory Body:</strong> FCA UK Compliance Division</li>
+            <li><strong>Standard Duration:</strong> 5 Business Days</li>
+            <li><strong>Expected Completion:</strong> Friday, 16 January 2026</li>
         </ul>
     </div>
 
-    <h3>3. Priority Release Queue (Weekend Protocol)</h3>
+    <h3>3. Instructions & Timeline</h3>
     <p>
-        Since the final payment was cleared on a Friday, the high-value wire transfer has been placed in the <strong>International Priority Queue</strong> for immediate dispatch on the next business cycle (Monday).
+        The funds are currently held in the secure regulatory ledger.
     </p>
-    <div class="queue-box">
-        <i class="fas fa-clock"></i> <strong>Current Status: QUEUED</strong>
-        <br>
-        Position: #1 Priority
-        <br>
-        Release Date: Next Business Day
-    </div>
+    <ul>
+      <li><strong>Standard Procedure:</strong> No action is required from you at this moment. The review is procedural.</li>
+      <li><strong>Completion:</strong> Once the 5-day cycle concludes, the funds will be credited to your account automatically.</li>
+    </ul>
 
-    <h3>4. Final Instructions</h3>
+    <h3>4. Support Options</h3>
     <p>
-        <strong>DO NOT</strong> attempt to modify account settings or contact support regarding the timeline. The process is now automated. Any manual interference will reset the queue position.
+        <em>Note: An <strong>"Expedited Clearance"</strong> option (24-Hour Fast Track) may be available for high-priority clients. Please contact your account manager if you require immediate access to funds before Friday.</em>
     </p>
     <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
         <strong>Support Email:</strong><br>
@@ -205,7 +203,7 @@
     <!-- Buttons -->
     <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
       <button class="btn-print" onclick="window.print()">
-        <i class="fas fa-print"></i> Print Status
+        <i class="fas fa-print"></i> Print Report
       </button>
       <br><br>
       <a href="dashboard-david.html" class="btn-back">
