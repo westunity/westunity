@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - West Unity Bank</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Premium Dashboard Styles (USD Version) */
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; }
+    .dashboard-container { max-width: 800px; margin: 20px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .dashboard-header { text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; }
+    .bank-logo { max-width: 180px; display: block; margin: 0 auto 10px auto; }
+    .dashboard-header h1 { color: #004080; margin: 10px 0 5px 0; }
+    
+    /* Virtual Card (Teal/Green for US) */
+    .virtual-card { background: linear-gradient(135deg, #004d40 0%, #00695c 100%); color: white; padding: 25px; border-radius: 16px; position: relative; box-shadow: 0 15px 35px rgba(0, 77, 64, 0.4); margin: 25px 0; overflow: hidden; border: 1px solid #004d40; }
+    .card-chip { width: 45px; height: 35px; background: linear-gradient(135deg, #ffd700 0%, #ffecb3 50%, #ffd700 100%); border-radius: 6px; margin-bottom: 20px; }
+    .card-number { font-size: 24px; letter-spacing: 3px; font-family: 'Courier New', monospace; margin-bottom: 20px; }
+    .card-details { display: flex; justify-content: space-between; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+
+    /* Balance */
+    .balance-display { text-align: center; margin-bottom: 30px; }
+    .balance-amount { font-size: 36px; font-weight: 800; color: #004080; margin: 10px 0; }
+    
+    /* Buttons */
+    .btn-transfer { background-color: #004080; color: white; padding: 12px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; }
+
+    /* Pending Section */
+    .pending-section { background-color: #e0f2f1; border-left: 5px solid #00695c; padding: 20px; border-radius: 6px; margin-bottom: 30px; }
+    
+    /* Table */
+    .transaction-table-wrapper { width: 100%; overflow-x: auto; margin-top: 15px; border-radius: 8px; border: 1px solid #eee; }
+    table { width: 100%; min-width: 600px; border-collapse: collapse; }
+    th { background-color: #004080; color: white; padding: 15px; font-size: 14px; white-space: nowrap; }
+    td { padding: 15px; border-bottom: 1px solid #eee; font-size: 14px; white-space: nowrap; color: #555; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- Header -->
+    <div class="dashboard-header">
+      <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" style="max-height: 50px;" />
+      <h1>Welcome, Amber Glover</h1>
+      <p style="color: #666; font-size: 13px;">Online Banking • <span id="todayDate"></span></p>
+    </div>
+
+    <!-- VIRTUAL CARD -->
+    <div class="virtual-card">
+        <i class="fas fa-flag-usa" style="position: absolute; right: -20px; bottom: -20px; font-size: 150px; opacity: 0.1;"></i>
+        <div class="card-chip"></div>
+        <div class="card-number">4003 12XX XXXX 9088</div>
+        <div class="card-details">
+            <div><span>Card Holder</span><br><strong>AMBER GLOVER</strong></div>
+            <div><span>Valid Thru</span><br><strong>09/29</strong></div>
+            <div><span>CVV</span><br><strong>***</strong></div>
+        </div>
+    </div>
+
+    <!-- Balance Info -->
+    <div class="balance-display">
+        <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Available Balance</p>
+        <div class="balance-amount">$8,450.00</div>
+        <a href="transfer-amber.html" class="btn-transfer">Make a Transfer <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- ALERT: ACH HOLD -->
+    <div class="pending-section">
+        <h4 style="margin: 0 0 10px 0; color: #004d40;"><i class="fas fa-university"></i> ACH Routing Activation Required</h4>
+        <p style="font-size: 14px; line-height: 1.5; color: #555;">
+            Your account is currently set to <strong>Payroll Deposit Only</strong>. To enable outbound transfers to external US or International banks, the <strong>ACH Routing Protocol</strong> must be activated.
+        </p>
+        
+        <div style="background: white; border: 1px solid #b2dfdb; padding: 10px; margin-top: 10px; border-radius: 5px;">
+            <ul style="font-size: 13px; color: #00695c; font-weight: bold; margin: 0; padding-left: 20px;">
+                <li>Required Activation Fee: $380.00</li>
+                <li>Status: <span style="background: #e0f2f1; color: #00695c; padding: 2px 5px; border-radius: 3px;">PENDING</span></li>
+            </ul>
+        </div>
+        <p style="font-size: 13px; margin-top: 10px;">
+            📩 Support: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
+        </p>
+    </div>
+
+    <!-- Transfer Limit -->
+    <div style="display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 30px;">
+        <div>
+            <div style="font-size: 12px; color: #666;">ACCOUNT NUMBER</div>
+            <div style="font-weight: bold; color: #333;">727885034100439</div>
+        </div>
+        <div style="text-align: right;">
+            <div style="font-size: 12px; color: #666;">ROUTING NO</div>
+            <div style="font-weight: bold; color: #333;">031101279</div>
+        </div>
+    </div>
+
+    <!-- Transaction History -->
+    <div>
+      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Transaction History</h3>
+      
+      <div class="transaction-table-wrapper">
+        <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>15 Jan 2026</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>10 Jan 2026</td><td>Uber Trip</td><td>Debit</td><td style="color: red;">-$24.50</td><td>✅ Completed</td></tr>
+              <tr><td>05 Jan 2026</td><td>Walmart Supercenter</td><td>Debit</td><td style="color: red;">-$150.00</td><td>✅ Completed</td></tr>
+              <tr><td>01 Jan 2026</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>28 Dec 2025</td><td>Rent Payment</td><td>Debit</td><td style="color: red;">-$1,200.00</td><td>✅ Completed</td></tr>
+              <tr><td>15 Dec 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>01 Dec 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>15 Nov 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>01 Nov 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>15 Oct 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>01 Oct 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>15 Sep 2025</td><td>Salary - Rapid Crew</td><td>Credit</td><td style="color: green;">+$1,500.00</td><td>✅ Completed</td></tr>
+              <tr><td>04 Sep 2025</td><td>Account Opening Deposit</td><td>Credit</td><td style="color: green;">+$500.00</td><td>✅ Completed</td></tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+      <a href="terms-amber.html" style="font-size: 13px; color: #666; margin-right: 20px;">Terms of Service</a>
+      <a href="index.html" style="font-size: 13px; color: #c62828; font-weight: bold; text-decoration: none;">Sign Out</a>
+    </div>
+
+  </div>
+
+  <footer style="text-align: center; margin-bottom: 20px; font-size: 12px; color: #888;">
+    &copy; 2025 West Unity Bank. Member FDIC.
+  </footer>
+
+  <script>
+    var today = new Date();
+    document.getElementById('todayDate').textContent = today.toLocaleDateString();
+  </script>
+
+  <!-- Snow Effect -->
+  <script>
+    const snowCount = 40;
+    for (let i = 0; i < snowCount; i++) {
+      let flake = document.createElement("div");
+      flake.className = "snowflake";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 5 + Math.random() * 10 + "s";
+      flake.style.opacity = 0.3 + Math.random() * 0.5;
+      flake.style.width = flake.style.height = 3 + Math.random() * 5 + "px";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(flake);
+    }
+  </script>
+  <style>
+    .snowflake { position: fixed; top: -10px; background: #ccc; border-radius: 50%; pointer-events: none; animation: fall linear infinite; z-index: 9999; }
+    @keyframes fall { to { transform: translateY(110vh); } }
+  </style>
+</body>
+</html>
