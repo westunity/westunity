@@ -228,7 +228,7 @@
       btn.style.opacity = "0.8";
       btn.disabled = true;
 
-      // 2. Wait 2 seconds (simulating server check)
+     // 2. Wait 2 seconds (simulating server check)
       setTimeout(function() {
           const username = usernameInput.value.toLowerCase();
 
@@ -243,10 +243,9 @@
             window.location.href = "dashboard-benjamin.html"; 
           } else if (username.includes("gretta")) {
             window.location.href = "dashboard-gretta.html";
+          } else if (username.includes("amber")) {
+            window.location.href = "dashboard-amber.html";
           } else {
-            } else if (username.includes("amber")) {
-   window.location.href = "dashboard-amber.html";
-}
             // Error Handling
             alert("We could not find an account with those credentials.");
             
