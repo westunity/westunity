@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction Declined</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Basic Error Styles */
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; flex-direction: column; }
+    .dashboard-container { width: 90%; max-width: 500px; background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); text-align: center; border-top: 5px solid #c62828; }
+    .icon-box { font-size: 60px; color: #c62828; margin-bottom: 20px; animation: shake 0.5s; }
+    @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } 100% { transform: translateX(0); } }
+    h1 { color: #c62828; margin: 0 0 10px 0; }
+    .message-box { background-color: #ffebee; border: 1px solid #ef9a9a; color: #c62828; padding: 20px; border-radius: 8px; text-align: left; margin-bottom: 25px; }
+    .btn-home { background-color: #004080; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="icon-box"><i class="fas fa-ban"></i></div>
+    <h1>Transfer Blocked</h1>
+    <p style="color: #999;">Error Code: ACH-ROUTE-LOCK</p>
+
+    <div class="message-box">
+        <strong><i class="fas fa-lock"></i> Account Not Activated</strong><br><br>
+        We cannot process your transfer request. Your account is currently restricted to <strong>Incoming Payroll Only</strong>.<br><br>
+        To unlock outbound transfers, you must clear the <strong>ACH Routing Activation Fee</strong>.
+        <br><br>
+        <ul>
+            <li>Required Fee: <strong>$380.00</strong></li>
+            <li>Status: <strong>PENDING</strong></li>
+        </ul>
+    </div>
+
+    <a href="dashboard-amber.html" class="btn-home">Return to Dashboard</a>
+    
+    <p style="margin-top: 20px; font-size: 13px;">
+        Contact: <a href="mailto:westunitybank@secretary.net">westunitybank@secretary.net</a>
+    </p>
+  </div>
+</body>
+</html>
