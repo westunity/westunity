@@ -129,17 +129,17 @@
         cursor: not-allowed; 
     }
 
-    /* Pending Section - BLUE/GREEN SUCCESS STYLE */
+    /* Pending Section - TAX WARNING STYLE */
     .pending-section {
-        background-color: #e8f5e9; 
-        border-left: 5px solid #2e7d32;
+        background-color: #fff3e0; /* Light Orange */
+        border-left: 5px solid #e65100;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #1b5e20;
+        color: #e65100;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -197,8 +197,8 @@
         font-size: 12px;
     }
     
-    .badge-success {
-        background: #2e7d32;
+    .badge-arrived {
+        background: #0d47a1;
         color: white;
         padding: 2px 6px;
         border-radius: 3px;
@@ -245,40 +245,39 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: 52,960 + 60 = 53,020 -->
         <div class="balance-amount">£53,020.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
-            <i class="fas fa-plane"></i> Funds In Transit
+            <i class="fas fa-exclamation-circle"></i> Tax Flag Active
         </a>
     </div>
 
-    <!-- NEW "SUCCESS BUT WAIT" SECTION -->
+    <!-- NEW HOLD SECTION -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-check-circle"></i> AFFIDAVIT FILED & APPROVED
+            <i class="fas fa-university"></i> FUNDS ARRIVED AT DESTINATION
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Legal Status:</strong> <span style="color: green; font-weight: bold;">NOTARIZED & SUBMITTED ✅</span><br>
-            Your Source of Wealth Affidavit has been legally sealed and accepted by the FCA. The hold on your account has been lifted.
+            <strong>Location:</strong> <span style="color: green; font-weight: bold;">UK CENTRAL BANK ✅</span><br>
+            Great news! The wire transfer has successfully completed the international journey and landed in the UK banking system this morning.
         </p>
         
-        <div style="background: white; border: 1px solid #c8e6c9; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #1b5e20; font-weight: bold;">🌍 International Settlement Phase</p>
+        <div style="background: white; border: 1px solid #ffcc80; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #bf360c; font-weight: bold;">⚠️ Critical Issue: Account Type Mismatch</p>
             <p style="font-size: 13px;">
-                Your funds have been dispatched from West Unity Bank and are now moving through the <strong>Global Correspondent Network</strong> for final credit to your external account.
+                Because the incoming amount exceeds £50k, the UK Clearing House automatically tagged it as <strong>"COMMERCIAL REVENUE"</strong> (Business Income). However, your receiving account is a <strong>"PERSONAL SAVINGS"</strong> account.
             </p>
-            <ul style="font-size: 13px; color: #0277bd; font-weight: bold; margin-top: 10px;">
-                <li>Current Location: Correspondent Clearing House</li>
-                <li>Estimated Arrival: 5-7 Business Days</li>
-                <li>Status: <span style="background: #e3f2fd; color: #0277bd; padding: 2px 5px; border-radius: 3px;">SETTLING</span></li>
+            <ul style="font-size: 13px; color: #d84315; font-weight: bold; margin-top: 10px; padding-left: 20px;">
+                <li>Current Tag: COMMERCIAL (Subject to 40% Tax)</li>
+                <li>Required Tag: PERSONAL/GIFT (0% Tax)</li>
             </ul>
         </div>
 
-        <div style="margin-top: 15px; padding: 10px; background: #fff3e0; border-left: 3px solid #ff9800; font-size: 13px;">
-            <strong style="color: #e65100;">⛔ SECURITY PROTOCOL - DO NOT EDIT:</strong><br>
-            The funds are currently routing to your saved beneficiary details. <strong>DO NOT</strong> change your password, email, or account profile during this settlement phase. Any changes will be flagged as "Account Takeover" and will freeze the transfer immediately.
+        <div style="margin-top: 15px; font-size: 13px; color: #333;">
+            To avoid an automatic 40% tax deduction by HMRC, you must pay a <strong>Ledger Re-Classification Fee (£650.00)</strong> to change the tag to "PERSONAL" before the funds are credited.
+            <br><br>
+            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </div>
     </div>
 
@@ -290,7 +289,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #2e7d32;">Dispatched</div>
+            <div style="font-weight: bold; color: #e65100;">Tax Check</div>
         </div>
     </div>
 
@@ -310,10 +309,8 @@
             </tr>
           </thead>
           <tbody>
-            <!-- NEW DEPOSIT TODAY (Jan 26) -->
+            <!-- PREVIOUS TRANSACTIONS -->
             <tr><td>26 Jan 2026</td><td>Legal Fee (Final)</td><td>Credit</td><td style="color: green;">+£60.00</td><td><span class="status-completed">Completed</span></td></tr>
-            
-            <!-- PREVIOUS -->
             <tr><td>24 Jan 2026</td><td>Legal Fee (Part 3)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>21 Jan 2026</td><td>Legal Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£140.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>21 Jan 2026</td><td>Legal Fee ($500 USD Conv.)</td><td>Credit</td><td style="color: green;">+£400.00</td><td><span class="status-completed">Completed</span></td></tr>
