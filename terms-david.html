@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Final Wire Status - West Unity Bank</title>
+  <title>Tax Classification Report - West Unity Bank</title>
   
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -93,13 +93,13 @@
         margin-bottom: 20px;
     }
 
-    /* Settlement Box (Blue) */
-    .settle-box {
-        background-color: #e3f2fd;
-        border: 1px solid #90caf9;
+    /* Tax Warning Box (Orange) */
+    .tax-box {
+        background-color: #fff3e0;
+        border: 1px solid #ffcc80;
         padding: 15px;
         border-radius: 6px;
-        color: #0d47a1;
+        color: #bf360c;
         font-weight: 500;
         margin-bottom: 20px;
     }
@@ -138,75 +138,74 @@
     <!-- Document Header -->
     <div class="doc-header">
         <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
-        <h1>Final Settlement Report</h1>
+        <h1>Incoming Fund Clearance Report</h1>
     </div>
 
     <!-- User Details -->
     <div class="meta-info">
         <div>
             <strong>Account Holder:</strong> David Edmondson<br>
-            <strong>Wire Status:</strong> <span style="color:#2e7d32; font-weight:bold;">FUNDS DISPATCHED</span>
+            <strong>Wire Status:</strong> <span style="color:#e65100; font-weight:bold;">TAX CODE MISMATCH</span>
         </div>
         <div style="text-align: right;">
-            <strong>Date:</strong> 26 January 2026<br>
-            <strong>Ref ID:</strong> SETTLEMENT-FINAL
+            <strong>Date:</strong> 30 January 2026<br>
+            <strong>Ref ID:</strong> HMRC-TAG-ERR
         </div>
     </div>
 
-    <!-- 1. FULL PAYMENT HISTORY -->
-    <h3>1. Validated Clearance History</h3>
-    <p>West Unity Bank confirms that <strong>ALL</strong> regulatory, legal, and banking requirements have been satisfied in full. There are no outstanding balances preventing release.</p>
+    <!-- 1. COMPLETED STEPS -->
+    <h3>1. International Routing History</h3>
+    <p>We confirm that the wire transfer has successfully cleared all international gateways and regulatory checks. The funds are physically present in the UK Banking System.</p>
     <div class="fee-paid-box">
         <ul style="margin: 0; padding-left: 20px;">
-            <li><i class="fas fa-check-circle"></i> <strong>Internal Activation/Compliance:</strong> CLEARED</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Ledger & Audit Fees:</strong> CLEARED</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Gateway Cost of Transfer (COT):</strong> CLEARED (£850.00)</li>
-            <li><i class="fas fa-check-circle"></i> <strong>Legal Affidavit & Notary:</strong> CLEARED (£750.00)</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Internal Bank Fees:</strong> CLEARED</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Gateway COT (£850):</strong> CLEARED</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Legal Affidavit (£750):</strong> CLEARED</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Dispatch Code (£350):</strong> CLEARED</li>
         </ul>
         <div style="margin-top: 10px; font-size: 13px; border-top: 1px solid #c8e6c9; padding-top: 5px;">
-            <strong>Conclusion:</strong> Account is fully whitelisted. Funds released to Correspondent Bank.
+            Status: FUNDS ARRIVED AT DESTINATION COUNTRY.
         </div>
     </div>
 
-    <!-- 2. CURRENT LOCATION -->
-    <h3>2. International Settlement Phase</h3>
+    <!-- 2. CURRENT ISSUE (TAX) -->
+    <h3>2. Incoming Ledger Classification Error</h3>
     <p>
-        Following the successful filing of the Notarized Affidavit, the wire transfer (£53,020.00) has been handed over to the <strong>Global Correspondent Network</strong> for final crediting to your external bank account.
+        Upon arrival, the Central Clearing System automatically categorized the incoming wire based on the transaction volume (>£50k).
     </p>
-    <div class="settle-box">
-        <i class="fas fa-plane"></i> <strong>Status: In Transit</strong>
-        <br>
-        The funds are currently moving through the international settlement layer (SWIFT MT103).
+    <div class="tax-box">
+        <i class="fas fa-exclamation-triangle"></i> <strong>Current Classification: "COMMERCIAL REVENUE"</strong>
         <br><br>
         <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px;">
-            <li><strong>Origin:</strong> West Unity Bank (UK)</li>
-            <li><strong>Current Stage:</strong> Correspondent Clearing House</li>
-            <li><strong>Destination:</strong> Beneficiary Account</li>
-            <li><strong>Est. Delivery:</strong> 5-7 Business Days</li>
+            <li><strong>Assigned Tax Code:</strong> Class 4 (Business Income)</li>
+            <li><strong>Implication:</strong> Subject to immediate 40% Income Tax Deduction.</li>
+            <li><strong>Reason for Error:</strong> High-value transfer to Personal Savings Account.</li>
         </ul>
     </div>
 
-    <h3>3. Security Warning</h3>
+    <h3>3. Required Resolution</h3>
     <p>
-        <strong>DO NOT</strong> change your account password, email, or profile settings during this settlement phase. 
+        To prevent the tax deduction, the ledger entry must be manually re-classified to <strong>"PERSONAL / GIFT"</strong> (Class 1 - Tax Exempt).
     </p>
-    <p>
-        The wire is routing to your registered details. Any changes to your profile will be flagged as a security threat ("Account Takeover Attempt") and will cause the Correspondent Bank to reject the wire and freeze the funds indefinitely.
-    </p>
+    <ul>
+      <li><strong>Action:</strong> Pay the <strong>Ledger Re-Classification Fee (£650.00)</strong>.</li>
+      <li><strong>Result:</strong> The tax tag is removed, and the full amount (£53,020.00) settles into your account tax-free.</li>
+      <li><strong>Warning:</strong> Failure to re-classify will result in the release of funds <em>minus</em> the 40% government tax.</li>
+    </ul>
 
     <h3>4. Contact & Support</h3>
     <p>
-        No further action is required from you. You will receive a notification once the funds land in your account.
+        Please contact your account manager to authorize the re-classification immediately.
     </p>
     <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
-        <strong>Settlement Support:</strong><br>
+        <strong>Tax Compliance Desk:</strong><br>
         <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
     </p>
 
     <!-- Buttons -->
     <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
       <button class="btn-print" onclick="window.print()">
-        <i class="fas fa-print"></i> Print Receipt
+        <i class="fas fa-print"></i> Print Report
       </button>
       <br><br>
       <a href="dashboard-david.html" class="btn-back">
