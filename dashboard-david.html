@@ -197,8 +197,8 @@
         font-size: 12px;
     }
     
-    .badge-arrived {
-        background: #0d47a1;
+    .badge-part {
+        background: #ff6f00;
         color: white;
         padding: 2px 6px;
         border-radius: 3px;
@@ -245,7 +245,8 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <div class="balance-amount">£53,020.00</div>
+        <!-- Updated Balance: 53,020 + 350 = 53,370 -->
+        <div class="balance-amount">£53,370.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
@@ -253,29 +254,33 @@
         </a>
     </div>
 
-    <!-- NEW HOLD SECTION -->
+    <!-- UPDATED HOLD SECTION -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-university"></i> FUNDS ARRIVED AT DESTINATION
+            <i class="fas fa-file-invoice"></i> HMRC TAX CLASSIFICATION: PARTIAL UPDATE
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Location:</strong> <span style="color: green; font-weight: bold;">UK CENTRAL BANK ✅</span><br>
-            Great news! The wire transfer has successfully completed the international journey and landed in the UK banking system this morning.
+            <strong>Status:</strong> <span style="color: #e65100; font-weight: bold;">PROCESSING... ⏳</span><br>
+            We have received your payment of £350.00. The automated tax deduction (40%) has been <strong>temporarily paused</strong> pending final clearance.
         </p>
         
         <div style="background: white; border: 1px solid #ffcc80; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #bf360c; font-weight: bold;">⚠️ Critical Issue: Account Type Mismatch</p>
+            <p style="margin-top: 0; color: #bf360c; font-weight: bold;">⚠️ Ledger Re-Classification Pending</p>
             <p style="font-size: 13px;">
-                Because the incoming amount exceeds £50k, the UK Clearing House automatically tagged it as <strong>"COMMERCIAL REVENUE"</strong> (Business Income). However, your receiving account is a <strong>"PERSONAL SAVINGS"</strong> account.
+                The tag change from "COMMERCIAL" to "PERSONAL" is 50% complete. To finalize the update and avoid the automatic government tax levy, the remaining balance must be cleared.
             </p>
-            <ul style="font-size: 13px; color: #d84315; font-weight: bold; margin-top: 10px; padding-left: 20px;">
-                <li>Current Tag: COMMERCIAL (Subject to 40% Tax)</li>
-                <li>Required Tag: PERSONAL/GIFT (0% Tax)</li>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+            <ul style="font-size: 13px; color: #d84315; font-weight: bold; margin: 0; padding-left: 20px;">
+                <li>Total Re-Class Fee: £650.00</li>
+                <li style="color: green;">Paid (05 Feb): -£350.00</li>
+                <li style="margin-top: 5px; color: #c62828;">REMAINING BALANCE: £300.00</li>
             </ul>
         </div>
 
         <div style="margin-top: 15px; font-size: 13px; color: #333;">
-            To avoid an automatic 40% tax deduction by HMRC, you must pay a <strong>Ledger Re-Classification Fee (£650.00)</strong> to change the tag to "PERSONAL" before the funds are credited.
+            Please clear the final <strong>£300.00</strong> to complete the re-classification. Once cleared, the funds will be immediately available for withdrawal tax-free.
             <br><br>
             📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </div>
@@ -309,7 +314,10 @@
             </tr>
           </thead>
           <tbody>
-            <!-- PREVIOUS TRANSACTIONS -->
+            <!-- NEW DEPOSIT (Yesterday Thursday 5 Feb) -->
+            <tr><td>05 Feb 2026</td><td>Tax Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£350.00</td><td><span class="status-completed">Completed</span></td></tr>
+            
+            <!-- PREVIOUS -->
             <tr><td>26 Jan 2026</td><td>Legal Fee (Final)</td><td>Credit</td><td style="color: green;">+£60.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>24 Jan 2026</td><td>Legal Fee (Part 3)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>21 Jan 2026</td><td>Legal Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£140.00</td><td><span class="status-completed">Completed</span></td></tr>
