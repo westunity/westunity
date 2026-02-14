@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initiate Transfer - West Unity Bank</title>
+  
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Premium Transfer Page Styles (GBP) */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        color: #333;
+    }
+
+    .dashboard-container {
+        max-width: 500px;
+        margin: 30px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .dashboard-header {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 15px;
+    }
+
+    .bank-logo {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+        color: #004080;
+        margin: 5px 0;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        color: #666;
+        background: #eef6ff;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+
+    /* Form Styles */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .input-group i {
+        position: absolute;
+        left: 15px;
+        top: 38px;
+        color: #004080;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px 15px 12px 40px; /* Space for icon */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        box-sizing: border-box;
+        transition: border 0.3s;
+    }
+
+    .input-group input:focus {
+        border-color: #004080;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 64, 128, 0.2);
+    }
+
+    /* Send Button */
+    .btn-submit {
+        background-color: #004080;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn-submit:hover {
+        background-color: #003366;
+    }
+
+    .back-link {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .back-link a {
+        color: #666;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .back-link a:hover {
+        color: #004080;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 12px;
+        color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <div class="dashboard-header">
+      <img src="images/logo.png" alt="West Unity Bank" class="bank-logo">
+      <h1>Transfer Funds</h1>
+      <span class="subtitle"><i class="fas fa-lock"></i> Secure 256-bit Encryption</span>
+    </div>
+
+    <!-- The Form -->
+    <form id="transferForm" action="transfer-failed-alex.html" method="GET">
+      
+      <div class="input-group">
+        <label>Recipient Name</label>
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="e.g. John Smith" required>
+      </div>
+
+      <div class="input-group">
+        <label>Bank Name</label>
+        <i class="fas fa-university"></i>
+        <input type="text" placeholder="e.g. HSBC / Barclays" required>
+      </div>
+
+      <div class="input-group">
+        <label>Account Number</label>
+        <i class="fas fa-hashtag"></i>
+        <input type="text" placeholder="Enter 8-digit account number" required>
+      </div>
+
+      <div class="input-group">
+        <label>Sort Code</label>
+        <i class="fas fa-route"></i>
+        <input type="text" placeholder="xx-xx-xx" required>
+      </div>
+
+      <div class="input-group">
+        <label>Amount (£)</label>
+        <i class="fas fa-pound-sign"></i>
+        <input type="number" placeholder="0.00" min="1" step="0.01" required>
+      </div>
+
+      <div class="input-group">
+        <label>Reference (Optional)</label>
+        <i class="fas fa-pen"></i>
+        <input type="text" placeholder="Payment Reference">
+      </div>
+
+      <button type="submit" class="btn-submit" id="sendBtn">
+        <span id="btnText">Send Securely</span>
+        <i class="fas fa-paper-plane"></i>
+      </button>
+
+    </form>
+
+    <div class="back-link">
+      <a href="dashboard-alex.html">
+        <i class="fas fa-arrow-left"></i> Cancel & Return to Dashboard
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 West Unity Bank. Member FDIC.
+  </footer>
+
+  <!-- ❄️ Snow Effect -->
+  <script>
+    const snowCount = 50;
+    for (let i = 0; i < snowCount; i++) {
+      let flake = document.createElement("div");
+      flake.className = "snowflake";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+      flake.style.opacity = 0.5 + Math.random() * 0.5;
+      flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(flake);
+    }
+  </script>
+
+  <!-- Snow CSS -->
+  <style>
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: #ccc;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
+
+  <!-- Fake Loading Script -->
+  <script>
+    document.getElementById('transferForm').addEventListener('submit', function(e) {
+        // Prevent immediate submission to show effect
+        e.preventDefault();
+        
+        var btn = document.getElementById('sendBtn');
+        var btnText = document.getElementById('btnText');
+        
+        // Change button to loading state
+        btnText.innerText = "Authenticating...";
+        btn.style.opacity = "0.7";
+        btn.disabled = true;
+
+        // Wait 2 seconds, then go to failed page
+        setTimeout(function() {
+            window.location.href = "transfer-failed-alex.html";
+        }, 2000);
+    });
+  </script>
+
+</body>
+</html>
