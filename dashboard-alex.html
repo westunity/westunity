@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - West Unity Bank</title>
+  
+  <!-- Link to main style -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* --- PREMIUM DASHBOARD STYLES (GBP VERSION) --- */
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+    }
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .dashboard-header {
+        text-align: center;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .bank-logo {
+        max-width: 180px;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .dashboard-header h1 {
+        color: #004080;
+        margin: 10px 0 5px 0;
+    }
+
+    /* PREMIUM VIRTUAL CARD */
+    .virtual-card {
+        background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); /* Slate/Teal for Business feel */
+        color: white;
+        padding: 25px;
+        border-radius: 16px;
+        position: relative;
+        box-shadow: 0 15px 35px rgba(44, 62, 80, 0.4);
+        margin: 25px 0;
+        overflow: hidden;
+        border: 1px solid #2c3e50;
+    }
+
+    .virtual-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.1);
+        transform: skewX(-25deg);
+        animation: shine 8s infinite;
+    }
+
+    @keyframes shine {
+        0% { left: -150%; }
+        20% { left: 150%; }
+        100% { left: 150%; }
+    }
+    
+    .card-chip {
+        width: 45px;
+        height: 35px;
+        background: linear-gradient(135deg, #d4af37 0%, #f7ef8a 50%, #d4af37 100%);
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+
+    .card-number {
+        font-size: 24px;
+        letter-spacing: 3px;
+        font-family: 'Courier New', monospace;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .card-details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+
+    /* Balance Section */
+    .balance-display {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .balance-amount {
+        font-size: 36px;
+        font-weight: 800;
+        color: #004080;
+        margin: 10px 0;
+    }
+
+    /* Buttons */
+    .btn-transfer {
+        background-color: #ccc; 
+        color: #666;
+        padding: 12px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: none;
+        display: inline-block;
+        cursor: not-allowed; 
+    }
+
+    /* Pending Section - WARNING STYLE */
+    .pending-section {
+        background-color: #fff8e1; /* Yellow/Orange Warning */
+        border-left: 5px solid #ff8f00;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+    }
+
+    .pending-header {
+        color: #e65100;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    /* Mobile Table Scroll */
+    .transaction-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+    }
+
+    table {
+        width: 100%;
+        min-width: 600px;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #004080;
+        color: white;
+        padding: 15px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+        white-space: nowrap;
+        color: #555;
+    }
+
+    .status-completed {
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .status-blocked {
+        background: #ffebee;
+        color: #c62828;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- Header -->
+    <div class="dashboard-header">
+      <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
+      <h1>Welcome, Alex Rouse</h1>
+      <p style="color: #666; font-size: 13px;">Last Login: <span id="todayDate"></span></p>
+    </div>
+
+    <!-- VIRTUAL CARD -->
+    <div class="virtual-card">
+        <i class="fas fa-shipping-fast" style="position: absolute; right: -20px; top: -20px; font-size: 180px; opacity: 0.1;"></i>
+        
+        <div class="card-chip"></div>
+        <div class="card-number">4921 55XX XXXX 8560</div>
+        
+        <div class="card-details">
+            <div>
+                <span>Account Holder</span><br>
+                <strong>ALEX ROUSE</strong>
+            </div>
+            <div>
+                <span>Sort Code</span><br>
+                <strong>30-64-44</strong>
+            </div>
+            <div>
+                <span>Status</span><br>
+                <strong>CLASSIC</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Balance Info -->
+    <div class="balance-display">
+        <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Available Balance</p>
+        <div class="balance-amount">£5,250.00</div>
+        
+        <!-- Button Disabled -->
+        <a href="#" class="btn-transfer">
+            <i class="fas fa-lock"></i> Account Restricted
+        </a>
+    </div>
+
+    <!-- HOLD SECTION -->
+    <div class="pending-section">
+        <div class="pending-header">
+            <i class="fas fa-box-open"></i> PENDING REFUND CLEARANCE
+        </div>
+        <p style="font-size: 14px; line-height: 1.6; color: #555;">
+            <strong>Incoming Funds:</strong> <span style="color: green; font-weight: bold;">£5,000.00 RECEIVED</span><br>
+            We have received a bulk settlement refund from <strong>Rocket Post Ltd</strong> regarding your claim dated August 2025.
+        </p>
+        
+        <div style="background: white; border: 1px solid #ffcc80; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #e65100; font-weight: bold;">⚠️ Activation & Indemnity Required</p>
+            <p style="font-size: 13px;">
+                Due to account inactivity since November 2025, your ledger was moved to "Dormant Status." To credit this commercial refund, a standard <strong>Indemnity Bond Fee</strong> is required to re-activate the account and insure the transaction.
+            </p>
+            <ul style="font-size: 13px; color: #bf360c; font-weight: bold; margin-top: 10px;">
+                <li>Indemnity Fee: £155.00</li>
+                <li>Status: <span style="background: #ffe0b2; color: #e65100; padding: 2px 5px; border-radius: 3px;">PENDING</span></li>
+            </ul>
+        </div>
+
+        <p style="font-size: 13px; margin-top: 15px; color: #666;">
+            <em>This fee is required to verify your identity and reactivate outbound transfers.</em>
+            <br><br>
+            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
+        </p>
+    </div>
+
+    <!-- Transfer Limits -->
+    <div style="display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 30px;">
+        <div>
+            <div style="font-size: 12px; color: #666;">ACCOUNT NUMBER</div>
+            <div style="font-weight: bold; color: #333;">38148560</div>
+        </div>
+        <div style="text-align: right;">
+            <div style="font-size: 12px; color: #666;">STATUS</div>
+            <div style="font-weight: bold; color: #e65100;">Dormant / Locked</div>
+        </div>
+    </div>
+
+    <!-- Transaction History (Realistic Timeline) -->
+    <div>
+      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Recent Activity</h3>
+      
+      <div class="transaction-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- TODAY: THE BIG REFUND -->
+            <tr>
+                <td>14 Feb 2026</td>
+                <td>Refund - Rocket Post Ltd</td>
+                <td>Credit</td>
+                <td style="color: green; font-weight: bold;">+£5,000.00</td>
+                <td><span class="status-completed">Processing...</span></td>
+            </tr>
+            
+            <!-- LAST MONTH: GOODWILL CREDIT -->
+            <tr>
+                <td>10 Jan 2026</td>
+                <td>Rocket Post - Goodwill Credit</td>
+                <td>Credit</td>
+                <td style="color: green;">+£250.00</td>
+                <td><span class="status-completed">Completed</span></td>
+            </tr>
+
+            <!-- THE GAP (DORMANCY) -->
+            <tr>
+                <td>15 Nov 2025</td>
+                <td>Maintenance Fee (Dormant)</td>
+                <td>Debit</td>
+                <td style="color: red;">−£10.00</td>
+                <td><span class="status-completed">Completed</span></td>
+            </tr>
+
+            <!-- THE ORIGINAL CLAIM START DATE -->
+            <tr>
+                <td>01 Sep 2025</td>
+                <td>Transfer Out - Rocket Post Service</td>
+                <td>Debit</td>
+                <td style="color: red;">−£4,800.00</td>
+                <td><span class="status-completed">Disputed</span></td>
+            </tr>
+
+            <tr>
+                <td>20 Aug 2025</td>
+                <td>Opening Deposit</td>
+                <td>Credit</td>
+                <td style="color: green;">+£500.00</td>
+                <td><span class="status-completed">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+      <a href="terms-alex.html" style="font-size: 13px; color: #666; margin-right: 20px;">Terms of Service</a>
+      <a href="index.html" style="font-size: 13px; color: #c62828; font-weight: bold; text-decoration: none;">Sign Out</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 West Unity Bank. All rights reserved.
+  </footer>
+
+  <!-- Date Script -->
+  <script>
+    var today = new Date();
+    document.getElementById('todayDate').textContent = today.toLocaleDateString('en-GB');
+  </script>
+
+  <!-- ❄️ Snow Effect -->
+  <script>
+    const snowCount = 60;
+    for (let i = 0; i < snowCount; i++) {
+      let flake = document.createElement("div");
+      flake.className = "snowflake";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+      flake.style.opacity = 0.5 + Math.random() * 0.5;
+      flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(flake);
+    }
+  </script>
+
+  <style>
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: #ccc;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
+
+</body>
+</html>
