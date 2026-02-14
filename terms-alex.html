@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Status - West Unity Bank</title>
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Premium Document Styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        color: #333;
+    }
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e0e0e0;
+    }
+
+    .doc-header {
+        text-align: center;
+        border-bottom: 2px solid #004080;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .bank-logo {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #004080;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .meta-info {
+        display: flex;
+        justify-content: space-between;
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        font-size: 14px;
+        border-left: 4px solid #004080;
+    }
+
+    h3 {
+        color: #004080;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    /* Status Boxes */
+    .fee-warning-box {
+        background-color: #fff8e1;
+        border: 1px solid #ffe0b2;
+        padding: 15px;
+        border-radius: 6px;
+        color: #e65100;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .btn-back {
+        display: inline-block;
+        background-color: #004080;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+        margin-top: 20px;
+    }
+
+    .btn-back:hover {
+        background-color: #003366;
+    }
+
+    .btn-print {
+        background: none;
+        border: 1px solid #ccc;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- Document Header -->
+    <div class="doc-header">
+        <img src="images/logo.png" alt="West Unity Bank" class="bank-logo" />
+        <h1>Account Reactivation Notice</h1>
+    </div>
+
+    <!-- User Details -->
+    <div class="meta-info">
+        <div>
+            <strong>Account Holder:</strong> Alex Rouse<br>
+            <strong>Account Status:</strong> <span style="color:#e65100; font-weight:bold;">DORMANT / INACTIVE</span>
+        </div>
+        <div style="text-align: right;">
+            <strong>Date:</strong> 14 February 2026<br>
+            <strong>Ref ID:</strong> WUB-DORMANT-04
+        </div>
+    </div>
+
+    <!-- 1. ACCOUNT STATUS -->
+    <h3>1. Dormancy Protocol</h3>
+    <p>
+        West Unity Bank systems have detected that Account #38148560 has been inactive since November 2025. Pursuant to banking security protocols, accounts with no outbound activity for 90+ days are automatically placed in <strong>"Protective Dormant Mode"</strong> to prevent unauthorized access.
+    </p>
+
+    <!-- 2. INCOMING REFUND -->
+    <h3>2. Incoming Commercial Credit</h3>
+    <p>
+        We have received a bulk settlement notification from <strong>Rocket Post Ltd</strong>.
+    </p>
+    <ul>
+        <li><strong>Deposit Amount:</strong> £5,000.00</li>
+        <li><strong>Source:</strong> Commercial Refund / Claims Settlement</li>
+        <li><strong>Current Status:</strong> HELD (Account Activation Required)</li>
+    </ul>
+
+    <!-- 3. FEE REQUIREMENT -->
+    <h3>3. Activation Requirement</h3>
+    <p>
+        To credit this commercial refund and restore full functionality (Transfers, Withdrawals, Card Usage), a one-time <strong>Indemnity Activation Fee</strong> is required.
+    </p>
+    
+    <div class="fee-warning-box">
+        <i class="fas fa-lock"></i> <strong>Required Action: Account Reactivation</strong>
+        <br><br>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px;">
+            <li>Activation & Indemnity Fee: <strong>£155.00</strong></li>
+            <li style="border-top: 1px solid #e65100; margin-top: 5px; padding-top: 5px; color: #d84315; font-weight: bold;">STATUS: OUTSTANDING</li>
+        </ul>
+    </div>
+    <p>
+        <em>This fee covers the administrative cost of re-verifying your identity and insuring the incoming commercial funds against reversal.</em>
+    </p>
+
+    <h3>4. Contact & Support</h3>
+    <p>
+        Please process this fee immediately to access your total balance of <strong>£5,250.00</strong>.
+    </p>
+    <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
+        <strong>Support Email:</strong><br>
+        <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
+    </p>
+
+    <!-- Buttons -->
+    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
+      <button class="btn-print" onclick="window.print()">
+        <i class="fas fa-print"></i> Print Notice
+      </button>
+      <br><br>
+      <a href="dashboard-alex.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+      </a>
+    </div>
+
+  </div>
+
+  <footer style="text-align: center; margin-bottom: 40px; font-size: 12px; color: #999;">
+    &copy; 2025 West Unity Bank. Member FDIC. All rights reserved.<br>
+    West Unity Bank is a trademark of WUB Financial Corp.
+  </footer>
+
+  <!-- ❄️ Snow Effect -->
+  <script>
+    const snowCount = 60;
+    for (let i = 0; i < snowCount; i++) {
+      let flake = document.createElement("div");
+      flake.className = "snowflake";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+      flake.style.opacity = 0.5 + Math.random() * 0.5;
+      flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+      flake.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(flake);
+    }
+  </script>
+
+  <style>
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: white; 
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+  </style>
+
+</body>
+</html>
