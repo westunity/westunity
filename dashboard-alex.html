@@ -118,15 +118,21 @@
 
     /* Buttons */
     .btn-transfer {
-        background-color: #ccc; 
-        color: #666;
+        background-color: #004080; /* Active Blue Color */
+        color: white;
         padding: 12px 40px;
         border-radius: 30px;
         text-decoration: none;
         font-weight: bold;
-        box-shadow: none;
+        box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);
         display: inline-block;
-        cursor: not-allowed; 
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .btn-transfer:hover {
+        transform: translateY(-2px);
+        background-color: #003366;
     }
 
     /* Pending Section - WARNING STYLE */
@@ -237,9 +243,9 @@
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Available Balance</p>
         <div class="balance-amount">£5,250.00</div>
         
-        <!-- Button Disabled -->
-        <a href="#" class="btn-transfer">
-            <i class="fas fa-lock"></i> Account Restricted
+        <!-- Button ENABLED -->
+        <a href="transfer-alex.html" class="btn-transfer">
+            Make a Transfer <i class="fas fa-arrow-right"></i>
         </a>
     </div>
 
