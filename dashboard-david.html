@@ -129,17 +129,17 @@
         cursor: not-allowed; 
     }
 
-    /* Pending Section - GREEN/SUCCESS STYLE */
+    /* Pending Section - IMF WARNING STYLE */
     .pending-section {
-        background-color: #e8f5e9; 
-        border-left: 5px solid #2e7d32;
+        background-color: #ffebee; 
+        border-left: 5px solid #d50000;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #1b5e20;
+        color: #b71c1c;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -197,9 +197,9 @@
         font-size: 12px;
     }
     
-    .badge-queue {
-        background: #0288d1;
-        color: white;
+    .badge-imf {
+        background: #000;
+        color: #fff;
         padding: 2px 6px;
         border-radius: 3px;
         font-size: 11px;
@@ -245,41 +245,44 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: 53,520 + 150 = 53,670 -->
         <div class="balance-amount">£53,670.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
-            <i class="fas fa-hourglass-half"></i> Processing...
+            <i class="fas fa-hand-paper"></i> IMF Stop Order
         </a>
     </div>
 
-    <!-- NEW "SUCCESS & WAIT" SECTION -->
+    <!-- NEW "IMF HOLD" SECTION -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-check-circle"></i> TAX CLASSIFICATION: CLEARED
+            <i class="fas fa-globe"></i> WIRE RETURNED: IMF REGULATORY STOP
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Status:</strong> <span style="color: green; font-weight: bold;">FUNDS UNLOCKED ✅</span><br>
-            We confirm receipt of the final £150.00 payment. The HMRC Tax Re-Classification is complete, and the tax hold has been lifted.
+            <strong>Transmission Status:</strong> <span style="color: #c62828; font-weight: bold;">FAILED / RETURNED ❌</span><br>
+            We attempted to dispatch the wire yesterday (Monday 23rd). The funds were rejected by the International Monetary Fund (IMF) monitoring system and returned to your dashboard.
         </p>
         
-        <div style="background: white; border: 1px solid #c8e6c9; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #1b5e20; font-weight: bold;">🚀 Queued for Dispatch (Weekend Protocol)</p>
+        <div style="background: white; border: 1px solid #ffcdd2; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #b71c1c; font-weight: bold;">⚠️ Critical Issue: Missing Liquidity Pin</p>
             <p style="font-size: 13px;">
-                Your funds have been moved to the <strong>International Dispatch Queue</strong> for immediate release. However, due to standard SWIFT closing hours for the weekend, the wire will be physically transmitted on the next banking day.
+                The IMF requires a <strong>Liquidity Assurance Pin (LAP)</strong> for all non-governmental transfers exceeding £50,000 to prevent inflation risks. This was not present in the wire packet.
             </p>
-            <ul style="font-size: 13px; color: #0288d1; font-weight: bold; margin: 10px 0 0 0; padding-left: 20px;">
-                <li>Regulatory Status: 100% APPROVED</li>
-                <li>Queued Position: Priority #1</li>
-                <li>Dispatch Time: <span class="badge-queue">MONDAY MORNING</span></li>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+            <ul style="font-size: 13px; color: #d32f2f; font-weight: bold; margin: 0; padding-left: 20px;">
+                <li>Blocking Entity: IMF (International Monetary Fund)</li>
+                <li>Requirement: Liquidity Pin Purchase</li>
+                <li>Pin Cost: £880.00 (Refundable)</li>
+                <li>Status: <span class="badge-imf">MANDATORY</span></li>
             </ul>
         </div>
 
-        <div style="margin-top: 15px; font-size: 13px; color: #333; background: #fff3e0; padding: 10px; border-left: 4px solid #f57c00;">
-            <strong>⚠️ SECURITY CAUTION - DO NOT ACT:</strong><br>
-            Your transfer is currently "Locked in Queue". <strong>NO FURTHER ACTION IS REQUIRED.</strong><br>
-            Do not attempt to make new transfers, change passwords, or contact support this weekend, as any account activity may reset the automated queue position.
+        <div style="margin-top: 15px; font-size: 13px; color: #333;">
+            To re-dispatch the wire successfully, you must purchase the Liquidity Pin. The fee is fully refundable and added to the final wire amount.
+            <br><br>
+            📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </div>
     </div>
 
@@ -291,13 +294,13 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #2e7d32;">Ready</div>
+            <div style="font-weight: bold; color: #b71c1c;">Returned</div>
         </div>
     </div>
 
-    <!-- Transaction History (Updated Dates) -->
+    <!-- Transaction History (Updated to show the Bounce) -->
     <div>
-      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Transaction History</h3>
+      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Recent Activity</h3>
       
       <div class="transaction-table-wrapper">
         <table>
@@ -311,10 +314,14 @@
             </tr>
           </thead>
           <tbody>
-            <!-- NEW DEPOSIT (Today Friday 20 Feb) -->
-            <tr><td>20 Feb 2026</td><td>Tax Ledger Fee (Final)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <!-- THE BOUNCE BACK (TODAY) -->
+            <tr><td>24 Feb 2026</td><td>System Re-Credit (Wire Returned)</td><td>Credit</td><td style="color: green;">+£53,670.00</td><td><span class="status-completed">Refunded</span></td></tr>
             
+            <!-- THE FAILED ATTEMPT (YESTERDAY) -->
+            <tr><td>23 Feb 2026</td><td>International Wire Dispatch</td><td>Debit</td><td style="color: red;">-£53,670.00</td><td><span class="status-blocked">❌ Rejected (IMF)</span></td></tr>
+
             <!-- PREVIOUS -->
+            <tr><td>20 Feb 2026</td><td>Tax Ledger Fee (Final)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>13 Feb 2026</td><td>Tax Ledger Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>05 Feb 2026</td><td>Tax Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£350.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>26 Jan 2026</td><td>Legal Fee (Final)</td><td>Credit</td><td style="color: green;">+£60.00</td><td><span class="status-completed">Completed</span></td></tr>
@@ -329,21 +336,6 @@
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 2</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 1</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>12 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>10 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£20.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>05 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>28 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£100.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>20 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£210.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>15 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£160.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>02 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£327.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>28 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>15 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>10 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,107.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>01 Oct 2025</td><td>Transfer Attempt</td><td>Debit</td><td style="color: red;">−£1,000.00</td><td><span class="status-blocked">Blocked (Hold)</span></td></tr>
-            <tr><td>28 Sep 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,500.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>15 Sep 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£3,000.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>01 Sep 2025</td><td>Disability Support</td><td>Credit</td><td style="color: green;">+£6,000.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>25 Aug 2025</td><td>Utility Bill Payment</td><td>Debit</td><td style="color: red;">−£220.75</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>10 Aug 2025</td><td>NHS Support Grant</td><td>Credit</td><td style="color: green;">+£5,500.00</td><td><span class="status-completed">Completed</span></td></tr>
           </tbody>
         </table>
       </div>
