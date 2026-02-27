@@ -129,10 +129,10 @@
         cursor: not-allowed; 
     }
 
-    /* Pending Section - IMF WARNING STYLE */
+    /* Pending Section - URGENT RED STYLE */
     .pending-section {
         background-color: #ffebee; 
-        border-left: 5px solid #d50000;
+        border-left: 5px solid #d32f2f;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
@@ -198,8 +198,8 @@
     }
     
     .badge-imf {
-        background: #000;
-        color: #fff;
+        background: #b71c1c;
+        color: white;
         padding: 2px 6px;
         border-radius: 3px;
         font-size: 11px;
@@ -245,42 +245,42 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <div class="balance-amount">£53,670.00</div>
+        <!-- Updated Balance: 53,670 + 250 = 53,920 -->
+        <div class="balance-amount">£53,920.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
-            <i class="fas fa-hand-paper"></i> IMF Stop Order
+            <i class="fas fa-ban"></i> IMF Stop Active
         </a>
     </div>
 
-    <!-- NEW "IMF HOLD" SECTION -->
+    <!-- UPDATED HOLD SECTION -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-globe"></i> WIRE RETURNED: IMF REGULATORY STOP
+            <i class="fas fa-file-invoice"></i> IMF LIQUIDITY PIN: PARTIAL CLEARANCE
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Transmission Status:</strong> <span style="color: #c62828; font-weight: bold;">FAILED / RETURNED ❌</span><br>
-            We attempted to dispatch the wire yesterday (Monday 23rd). The funds were rejected by the International Monetary Fund (IMF) monitoring system and returned to your dashboard.
+            <strong>Status:</strong> <span style="color: #d32f2f; font-weight: bold;">PROCESSING... ⏳</span><br>
+            We have received your partial payment (£250.00). The IMF Liquidity Pin generation process has been initiated.
         </p>
         
         <div style="background: white; border: 1px solid #ffcdd2; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #b71c1c; font-weight: bold;">⚠️ Critical Issue: Missing Liquidity Pin</p>
+            <p style="margin-top: 0; color: #b71c1c; font-weight: bold;">⚠️ Pending Finalization</p>
             <p style="font-size: 13px;">
-                The IMF requires a <strong>Liquidity Assurance Pin (LAP)</strong> for all non-governmental transfers exceeding £50,000 to prevent inflation risks. This was not present in the wire packet.
+                The <strong>Liquidity Assurance Pin (LAP)</strong> cannot be fully generated or attached to the wire transfer until the bond amount is covered in full.
             </p>
             
             <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
 
-            <ul style="font-size: 13px; color: #d32f2f; font-weight: bold; margin: 0; padding-left: 20px;">
-                <li>Blocking Entity: IMF (International Monetary Fund)</li>
-                <li>Requirement: Liquidity Pin Purchase</li>
-                <li>Pin Cost: £880.00 (Refundable)</li>
-                <li>Status: <span class="badge-imf">MANDATORY</span></li>
+            <ul style="font-size: 13px; color: #b71c1c; font-weight: bold; margin: 0; padding-left: 20px;">
+                <li>Total Bond Required: £880.00</li>
+                <li style="color: green;">Paid (27 Feb): -£250.00</li>
+                <li style="margin-top: 5px; color: #c62828;">REMAINING BALANCE: £630.00</li>
             </ul>
         </div>
 
         <div style="margin-top: 15px; font-size: 13px; color: #333;">
-            To re-dispatch the wire successfully, you must purchase the Liquidity Pin. The fee is fully refundable and added to the final wire amount.
+            Please clear the remaining <strong>£630.00</strong> to finalize the pin. Once generated, the wire will bypass the IMF block and credit your account immediately.
             <br><br>
             📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </div>
@@ -294,13 +294,13 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #b71c1c;">Returned</div>
+            <div style="font-weight: bold; color: #c62828;">IMF Block</div>
         </div>
     </div>
 
-    <!-- Transaction History (Updated to show the Bounce) -->
+    <!-- Transaction History (Updated Dates) -->
     <div>
-      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Recent Activity</h3>
+      <h3 style="color: #004080; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">Transaction History</h3>
       
       <div class="transaction-table-wrapper">
         <table>
@@ -314,10 +314,11 @@
             </tr>
           </thead>
           <tbody>
-            <!-- THE BOUNCE BACK (TODAY) -->
-            <tr><td>24 Feb 2026</td><td>System Re-Credit (Wire Returned)</td><td>Credit</td><td style="color: green;">+£53,670.00</td><td><span class="status-completed">Refunded</span></td></tr>
+            <!-- NEW DEPOSIT TODAY (Feb 27) -->
+            <tr><td>27 Feb 2026</td><td>IMF Bond (Part 1)</td><td>Credit</td><td style="color: green;">+£250.00</td><td><span class="status-completed">Completed</span></td></tr>
             
-            <!-- THE FAILED ATTEMPT (YESTERDAY) -->
+            <!-- BOUNCE & RETURN (Feb 24) -->
+            <tr><td>24 Feb 2026</td><td>System Re-Credit (Wire Returned)</td><td>Credit</td><td style="color: green;">+£53,670.00</td><td><span class="status-completed">Refunded</span></td></tr>
             <tr><td>23 Feb 2026</td><td>International Wire Dispatch</td><td>Debit</td><td style="color: red;">-£53,670.00</td><td><span class="status-blocked">❌ Rejected (IMF)</span></td></tr>
 
             <!-- PREVIOUS -->
@@ -374,9 +375,22 @@
       document.body.appendChild(flake);
     }
   </script>
+
+  <!-- Snow CSS -->
   <style>
-    .snowflake { position: fixed; top: -10px; background: #ccc; border-radius: 50%; pointer-events: none; animation: fall linear infinite; z-index: 9999; }
-    @keyframes fall { to { transform: translateY(110vh); } }
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: #ccc;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
   </style>
+
 </body>
 </html>
