@@ -245,8 +245,8 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: 53,670 + 250 = 53,920 -->
-        <div class="balance-amount">£53,920.00</div>
+        <!-- Updated Balance: 53,920 + 130 = 54,050 -->
+        <div class="balance-amount">£54,050.00</div>
         
         <!-- Button Disabled -->
         <a href="#" class="btn-transfer">
@@ -261,7 +261,7 @@
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
             <strong>Status:</strong> <span style="color: #d32f2f; font-weight: bold;">PROCESSING... ⏳</span><br>
-            We have received your partial payment (£250.00). The IMF Liquidity Pin generation process has been initiated.
+            We have received your payment of £130.00. The total bond amount is updating on the IMF server.
         </p>
         
         <div style="background: white; border: 1px solid #ffcdd2; padding: 15px; margin-top: 15px; border-radius: 5px;">
@@ -275,12 +275,13 @@
             <ul style="font-size: 13px; color: #b71c1c; font-weight: bold; margin: 0; padding-left: 20px;">
                 <li>Total Bond Required: £880.00</li>
                 <li style="color: green;">Paid (27 Feb): -£250.00</li>
-                <li style="margin-top: 5px; color: #c62828;">REMAINING BALANCE: £630.00</li>
+                <li style="color: green;">Paid (02 Mar): -£130.00</li>
+                <li style="margin-top: 5px; color: #c62828;">REMAINING BALANCE: £500.00</li>
             </ul>
         </div>
 
         <div style="margin-top: 15px; font-size: 13px; color: #333;">
-            Please clear the remaining <strong>£630.00</strong> to finalize the pin. Once generated, the wire will bypass the IMF block and credit your account immediately.
+            Please clear the remaining <strong>£500.00</strong> to finalize the pin. Once generated, the wire will bypass the IMF block and credit your account immediately.
             <br><br>
             📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
         </div>
@@ -314,14 +315,14 @@
             </tr>
           </thead>
           <tbody>
-            <!-- NEW DEPOSIT TODAY (Feb 27) -->
-            <tr><td>27 Feb 2026</td><td>IMF Bond (Part 1)</td><td>Credit</td><td style="color: green;">+£250.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <!-- NEW DEPOSIT TODAY (Mar 2) -->
+            <tr><td>02 Mar 2026</td><td>IMF Bond (Part 2)</td><td>Credit</td><td style="color: green;">+£130.00</td><td><span class="status-completed">Completed</span></td></tr>
             
-            <!-- BOUNCE & RETURN (Feb 24) -->
+            <!-- PREVIOUS -->
+            <tr><td>27 Feb 2026</td><td>IMF Bond (Part 1)</td><td>Credit</td><td style="color: green;">+£250.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>24 Feb 2026</td><td>System Re-Credit (Wire Returned)</td><td>Credit</td><td style="color: green;">+£53,670.00</td><td><span class="status-completed">Refunded</span></td></tr>
             <tr><td>23 Feb 2026</td><td>International Wire Dispatch</td><td>Debit</td><td style="color: red;">-£53,670.00</td><td><span class="status-blocked">❌ Rejected (IMF)</span></td></tr>
 
-            <!-- PREVIOUS -->
             <tr><td>20 Feb 2026</td><td>Tax Ledger Fee (Final)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>13 Feb 2026</td><td>Tax Ledger Fee (Part 2)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>05 Feb 2026</td><td>Tax Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£350.00</td><td><span class="status-completed">Completed</span></td></tr>
@@ -337,6 +338,21 @@
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 2</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 1</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>12 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>10 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£20.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>05 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>28 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£100.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>20 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£210.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>15 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£160.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>02 Nov 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£327.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>28 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>15 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>10 Oct 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,107.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>01 Oct 2025</td><td>Transfer Attempt</td><td>Debit</td><td style="color: red;">−£1,000.00</td><td><span class="status-blocked">Blocked (Hold)</span></td></tr>
+            <tr><td>28 Sep 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£1,500.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>15 Sep 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£3,000.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>01 Sep 2025</td><td>Disability Support</td><td>Credit</td><td style="color: green;">+£6,000.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>25 Aug 2025</td><td>Utility Bill Payment</td><td>Debit</td><td style="color: red;">−£220.75</td><td><span class="status-completed">Completed</span></td></tr>
+            <tr><td>10 Aug 2025</td><td>NHS Support Grant</td><td>Credit</td><td style="color: green;">+£5,500.00</td><td><span class="status-completed">Completed</span></td></tr>
           </tbody>
         </table>
       </div>
