@@ -118,28 +118,28 @@
 
     /* Buttons */
     .btn-transfer {
-        background-color: #ccc; 
-        color: #666;
+        background-color: #004080; 
+        color: white;
         padding: 12px 40px;
         border-radius: 30px;
         text-decoration: none;
         font-weight: bold;
-        box-shadow: none;
+        box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);
         display: inline-block;
-        cursor: not-allowed; 
+        cursor: pointer; 
     }
 
-    /* Pending Section - URGENT RED STYLE */
+    /* Pending Section - BLUE DEVICE SYNC STYLE */
     .pending-section {
-        background-color: #ffebee; 
-        border-left: 5px solid #d32f2f;
+        background-color: #e3f2fd; 
+        border-left: 5px solid #0288d1;
         padding: 20px;
         border-radius: 6px;
         margin-bottom: 30px;
     }
 
     .pending-header {
-        color: #b71c1c;
+        color: #01579b;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -197,8 +197,8 @@
         font-size: 12px;
     }
     
-    .badge-imf {
-        background: #b71c1c;
+    .badge-otp {
+        background: #0288d1;
         color: white;
         padding: 2px 6px;
         border-radius: 3px;
@@ -236,8 +236,8 @@
                 <strong>23-01-20</strong>
             </div>
             <div>
-                <span>Status</span><br>
-                <strong>PLATINUM</strong>
+                <span>Card PIN / OTP</span><br>
+                <strong style="color: #ffca28;"><i class="fas fa-lock"></i> PENDING SYNC</strong>
             </div>
         </div>
     </div>
@@ -245,49 +245,51 @@
     <!-- Balance Info -->
     <div class="balance-display">
         <p style="margin: 0; color: #666; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Current Ledger Balance</p>
-        <!-- Updated Balance: 54,370 + 100 = 54,470 -->
-        <div class="balance-amount">£54,470.00</div>
+        <!-- Updated Balance: 54,470 + 80 = 54,550 -->
+        <div class="balance-amount">£54,550.00</div>
         
-        <!-- Button Disabled -->
-        <a href="#" class="btn-transfer">
-            <i class="fas fa-ban"></i> IMF Stop Active
+        <!-- Button Activated for Trap -->
+        <a href="transfer.html" class="btn-transfer">
+            <i class="fas fa-mobile-alt"></i> Sync Device to Transfer
         </a>
     </div>
 
-    <!-- UPDATED HOLD SECTION -->
+    <!-- NEW HOLD SECTION: OTP / CARD SYNC -->
     <div class="pending-section">
         <div class="pending-header">
-            <i class="fas fa-file-invoice"></i> IMF LIQUIDITY PIN: PARTIAL CLEARANCE
+            <i class="fas fa-mobile-alt"></i> ACTION REQUIRED: DEVICE OTP SYNCHRONIZATION
         </div>
         <p style="font-size: 14px; line-height: 1.6; color: #555;">
-            <strong>Status:</strong> <span style="color: #d32f2f; font-weight: bold;">90% COMPLETE ⏳</span><br>
-            We have received your additional payment of £100.00 (Processed Thursday). The IMF Bond is almost fully funded.
+            <strong>Clearance Status:</strong> <span style="color: green; font-weight: bold;">FUNDS FULLY CLEARED ✅</span><br>
+            We have received your final payment of £80.00 (Processed Friday). The IMF Liquidity Pin has been generated and your funds are now 100% unlocked in your account.
         </p>
         
-        <div style="background: white; border: 1px solid #ffcdd2; padding: 15px; margin-top: 15px; border-radius: 5px;">
-            <p style="margin-top: 0; color: #b71c1c; font-weight: bold;">⚠️ Pending Finalization (Weekend Cutoff)</p>
+        <div style="background: white; border: 1px solid #90caf9; padding: 15px; margin-top: 15px; border-radius: 5px;">
+            <p style="margin-top: 0; color: #01579b; font-weight: bold;">🔐 Step 2: Unlocking Your Card & Transfer Access</p>
             <p style="font-size: 13px;">
-                The <strong>Liquidity Assurance Pin (LAP)</strong> requires the final fraction to generate the release code.
+                To view your Virtual Card PIN, CVV, and to authorize external transfers, your mobile device must be synchronized with the <strong>West Unity Secure OTP Gateway</strong>. 
             </p>
             
             <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
 
-            <ul style="font-size: 13px; color: #b71c1c; font-weight: bold; margin: 0; padding-left: 20px;">
-                <li>Total Bond Required: £880.00</li>
-                <li style="color: green;">Paid (27 Feb): -£250.00</li>
-                <li style="color: green;">Paid (02 Mar): -£130.00</li>
-                <li style="color: green;">Paid (06 Mar): -£150.00</li>
-                <li style="color: green;">Paid (13 Mar): -£170.00</li>
-                <li style="color: green;">Paid (19 Mar): -£100.00</li>
-                <li style="margin-top: 5px; color: #c62828;">REMAINING BALANCE: £80.00</li>
+            <ul style="font-size: 13px; color: #0277bd; font-weight: bold; margin: 0; padding-left: 20px;">
+                <li>Requirement: Secure Telecom Routing Token</li>
+                <li>Token Fee: £450.00</li>
+                <li>Status: <span class="badge-otp">AWAITING TOKEN PURCHASE</span></li>
             </ul>
         </div>
 
-        <div style="margin-top: 15px; font-size: 13px; color: #333;">
-            Please clear the final <strong>£80.00</strong> before the weekend cutoff. Once this last £80 is verified, the wire will bypass the IMF block and be pre-staged for immediate release.
+        <!-- The Threat about changing numbers -->
+        <div style="margin-top: 15px; padding: 10px; background: #fff3e0; border-left: 3px solid #ff9800; font-size: 13px;">
+            <strong style="color: #e65100;">⚠️ ANTI-FRAUD WARNING:</strong><br>
+            <strong>DO NOT attempt to change your registered phone number or request a new number activation.</strong> Because your account holds high-value cleared funds, any sudden change to your contact details before OTP Synchronization will trigger a permanent <strong>Identity Theft Lockout</strong>.
+        </div>
+
+        <p style="font-size: 13px; margin-top: 15px; color: #333;">
+            Please purchase the Routing Token (£450.00) immediately. Once purchased, the system will instantly beam your PIN and Transfer OTP to your current device.
             <br><br>
             📩 Contact: <a href="mailto:westunitybank@secretary.net" style="color: #004080; font-weight: bold;">westunitybank@secretary.net</a>
-        </div>
+        </p>
     </div>
 
     <!-- Transfer Limits -->
@@ -298,7 +300,7 @@
         </div>
         <div style="text-align: right;">
             <div style="font-size: 12px; color: #666;">PROTOCOL STATUS</div>
-            <div style="font-weight: bold; color: #c62828;">IMF Block</div>
+            <div style="font-weight: bold; color: #0288d1;">Awaiting OTP Sync</div>
         </div>
     </div>
 
@@ -318,10 +320,11 @@
             </tr>
           </thead>
           <tbody>
-            <!-- NEW DEPOSIT YESTERDAY (Mar 19) -->
-            <tr><td>19 Mar 2026</td><td>IMF Bond (Part 5)</td><td>Credit</td><td style="color: green;">+£100.00</td><td><span class="status-completed">Completed</span></td></tr>
+            <!-- NEW DEPOSIT FRIDAY (Mar 27) -->
+            <tr><td>27 Mar 2026</td><td>IMF Bond (Final)</td><td>Credit</td><td style="color: green;">+£80.00</td><td><span class="status-completed">Completed</span></td></tr>
             
             <!-- PREVIOUS -->
+            <tr><td>19 Mar 2026</td><td>IMF Bond (Part 5)</td><td>Credit</td><td style="color: green;">+£100.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>13 Mar 2026</td><td>IMF Bond (Part 4)</td><td>Credit</td><td style="color: green;">+£170.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>06 Mar 2026</td><td>IMF Bond (Part 3)</td><td>Credit</td><td style="color: green;">+£150.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>02 Mar 2026</td><td>IMF Bond (Part 2)</td><td>Credit</td><td style="color: green;">+£130.00</td><td><span class="status-completed">Completed</span></td></tr>
@@ -342,7 +345,6 @@
             <tr><td>23 Dec 2025</td><td>Ledger Fee (Part 1)</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 2</td><td>Credit</td><td style="color: green;">+£200.00</td><td><span class="status-completed">Completed</span></td></tr>
             <tr><td>19 Dec 2025</td><td>Ledger Sync Fee - Part 1</td><td>Credit</td><td style="color: green;">+£300.00</td><td><span class="status-completed">Completed</span></td></tr>
-            <tr><td>12 Dec 2025</td><td>PayPal Deposit</td><td>Credit</td><td style="color: green;">+£85.00</td><td><span class="status-completed">Completed</span></td></tr>
           </tbody>
         </table>
       </div>
